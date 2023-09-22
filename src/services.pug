@@ -1,0 +1,12 @@
+extends templates/layout
+include templates/_doctor-sm
+
+block content
+	.wrapper
+		.main-services
+			h2
+				a(href="#") Медицинские услуги
+			.main-services__links
+				each item in servicesList
+					p
+						a(href="#")= item.item
