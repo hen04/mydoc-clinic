@@ -1,0 +1,786 @@
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: $gray-default;
+  font: normal 18px/1.35 "Roboto", sans-serif;
+
+  &.menu-opened {
+    main,
+    footer {
+      @include responsive(device) {
+        display: none;
+      }
+    }
+
+    .main-header__menu-btn {
+      @include responsive(device) {
+        background: url(../images/menu-close.svg) 0 0 no-repeat;
+      }
+    }
+  }
+}
+
+.wrapper {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+
+  @include responsive(mobile) {
+    padding: 0 24px;
+  }
+}
+
+main {
+  @include responsive(portrait) {
+    padding: 40px;
+  }
+  @include responsive(desktop) {
+    padding: 40px 0 80px;
+  }
+}
+
+.main-header {
+  display: grid;
+  padding: 20px 0;
+  grid-template-columns: repeat(4, auto);;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "menuBtn logo logo logo"
+    "phone phone phone search";
+
+  @include responsive(portrait) {
+    grid-template-columns: 56px auto auto 40px;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "menuBtn logo phone search";
+  }
+
+  @include responsive(desktop) {
+    padding: 40px 0;
+    grid-template-columns: 300px auto auto 200px;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+    "logo phone blind button button"
+    "menu menu menu menu search";
+  }
+
+  &__logo {
+    grid-area: logo;
+    display: flex;
+    max-width: 275px;
+
+    @include responsive(mobile) {
+      margin-left: auto;
+    }
+
+    img {
+      @include responsive(device) {
+        max-width: 200px;
+      }
+
+      @include responsive(desktop) {
+        max-width: 250px;
+      }
+    }
+  }
+
+  &__menu-btn {
+    grid-area: menuBtn;
+    background: url(../images/menu.svg) 0 0 no-repeat;
+    width: 40px;
+    height: 40px;
+
+    @include responsive(desktop) {
+      display: none;
+    }
+  }
+
+  &__phone {
+    grid-area: phone;
+    display: flex;
+
+    @include responsive(mobile) {
+      margin-top: 16px;
+      font-size: 22px;
+      flex-flow: wrap;
+    }
+
+    @include responsive(portrait) {
+      margin-left: -30px;
+      align-items: center;
+    }
+
+    @include responsive(desktop) {
+      font-size: 22px;
+      align-items: center;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    span {
+      display: inline-block;
+
+      @include responsive(desktop) {
+        margin-left: 4px;
+        margin-bottom: -4px;
+      }
+
+      @include responsive(device) {
+        font-size: 14px;
+      }
+
+      @include responsive(portrait) {
+        margin: 4px 0 0 4px;
+      }
+
+      @include responsive(desktop) {
+        font-size: 15px;
+      }
+
+    }
+  }
+
+  &__blind {
+    grid-area: blind;
+
+    @include responsive(device) {
+      display: none;
+    }
+
+    @include responsive(desktop) {
+      display: flex;
+      margin-left: auto;
+    }
+  }
+
+  &__button {
+    grid-area: button;
+    min-width: 240px;
+
+    @include responsive(device) {
+      display: none;
+    }
+
+    @include responsive(desktop) {
+      margin-left: auto;
+    }
+  }
+
+  &__menu {
+    grid-area: menu;
+
+    @include responsive(device) {
+      display: none;
+      position: absolute;
+      background: $white;
+      top: 62px;
+      left: 0;
+      right: 0;
+      padding: 24px 0;
+      height: calc(100% - 110px);
+    }
+
+    @include responsive(desktop) {
+      margin-top: 24px;
+    }
+
+    &.opened {
+      display: block;
+
+      ul {
+        border-top: 1px solid rgba($gray-32, 0.5);;
+        border-bottom: 1px solid rgba($gray-32, 0.5);;
+      }
+
+      .has-submenu {
+        @include responsive(device) {
+          padding: 0 24px;
+        }
+
+        a {
+          @include responsive(device) {
+            padding: 12px 0;
+          }
+        }
+
+        img {
+          @include responsive(device) {
+            transform: rotate(-90deg) translate(-50%, 0);
+            margin: 0;
+          }
+        }
+
+        &.opened {
+          border-bottom: 0;
+
+          img {
+            @include responsive(device) {
+              transform: rotate(0) translate(0, 50%);
+            }
+          }
+
+          ul {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      display: flex;
+
+      @include responsive(device) {
+        flex-flow: column;
+      }
+    }
+
+    li {
+      list-style: none;
+
+      @include responsive(device) {
+        padding: 12px 24px;
+        border-top: 1px solid rgba($gray-32, 0.5);
+        border-bottom: 1px solid rgba($gray-32, 0.5);
+      }
+
+      &:hover {
+        a {
+          color: $dark-default;
+          opacity: 0.7;
+
+          &:after {
+            @include responsive(desktop) {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    li:not(:last-child) {
+      @include responsive(desktop) {
+        padding-right: 32px;
+      }
+    }
+
+    .has-submenu {
+      padding: 0 24px;
+
+      span {
+        display: flex;
+
+        @include responsive(device) {
+          justify-content: space-between;
+        }
+      }
+
+      img {
+        width: 24px;
+        height: 100%;
+        margin: 2px 0 0 4px;
+        transition: all 0.5s;
+
+        @include responsive(device) {
+          transform: rotate(0);
+        }
+      }
+
+      &:hover {
+        .submenu {
+          display: block;
+
+          @include responsive(device) {
+            margin: 0 -24px;
+          }
+        }
+
+        img {
+          opacity: 0.7;
+
+          @include responsive(desktop) {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+    .submenu {
+      display: none;
+      background: #fff;
+
+      @include responsive(desktop) {
+        padding: 12px;
+        margin-left: -12px;
+        position: absolute;
+      }
+
+      li {
+        padding: 0;
+
+        @include responsive(device) {
+          padding: 6px 40px;
+        }
+
+        &:not(:last-child) {
+          @include responsive(desktop) {
+            padding: 6px 0;
+          }
+        }
+      }
+
+      a {
+        font-size: 16px;
+        opacity: 1;
+
+        &:hover {
+          opacity: 0.7;
+        }
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 18px;
+      position: relative;
+      color: $dark-default;
+      transition: opacity 0.5s;
+      display: block;
+
+      @include responsive(desktop) {
+        font-size: 20px;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        background: $pink-default;
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+    }
+  }
+
+  &__search {
+    grid-area: search;
+    display: flex;
+    width: 24px;
+    height: 24px;
+    margin: auto 6px 6px auto;
+
+    @include responsive(device) {
+      margin-bottom: auto;
+    }
+  }
+}
+
+.blind-version {
+  border: 0;
+  background: none;
+  font-size: 16px;
+  color: $gray-default;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  img {
+    width: 24px;
+    margin: 0 8px 0 0;
+  }
+}
+
+.main-footer {
+  display: grid;
+  padding: 40px 0;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas:
+    "logo"
+    "menu"
+    "links"
+    "info"
+    "logos"
+    "copyright";
+
+  @include responsive(portrait) {
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+    "logo logo logo logo"
+    "menu menu links links"
+    "info info info logos"
+    "copyright copyright copyright copyright";
+  }
+
+  @include responsive(desktop) {
+    padding: 48px 0;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+    "logo logo"
+    "menu menu"
+    "links info"
+    "copyright logos";
+  }
+
+  &__logo {
+    grid-area: logo;
+
+    img {
+      @include responsive(device) {
+        max-width: 200px;
+      }
+    }
+  }
+
+  &__menu {
+    grid-area: menu;
+    @include responsive(desktop) {
+      margin: 32px 0;
+    }
+
+    ul {
+      padding: 0;
+      list-style: none;
+      margin: 0;
+
+      @include responsive(desktop) {
+        display: flex;
+      }
+    }
+
+    li:not(:last-child) {
+      @include responsive(device) {
+        margin: 12px 0;
+      }
+
+      @include responsive(desktop) {
+        padding-right: 32px;
+      }
+    }
+
+    a {
+      @include responsive(desktop) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__links {
+    grid-area: links;
+
+    @include responsive(mobile) {
+      margin-top: 24px;
+    }
+
+    @include responsive(portrait) {
+      margin-top: 12px;
+    }
+  }
+
+  &__address-item {
+    @include responsive(desktop) {
+      display: flex;
+    }
+
+    &:first-child {
+      margin-bottom: 16px;
+    }
+
+    h6 {
+      font-size: 16px;
+      color: $gray-32;
+    }
+  }
+
+  &__address-text,
+  &__address-time {
+    @include responsive(desktop) {
+      width: 45%;
+    }
+  }
+
+  &__address-text,
+  &__address-mail {
+    p {
+      font-size: 16px;
+    }
+  }
+
+  &__address-phone,
+  &__address-time {
+    p {
+      font-size: 20px;
+      font-weight: 500;
+
+      @include responsive(desktop) {
+        margin-bottom: 0;
+      }
+
+      span {
+        font-size: 15px;
+        display: block;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__address-phone {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__info {
+    grid-area: info;
+
+    @include responsive(portrait) {
+      padding-top: 24px;
+      padding-right: 24px
+    }
+
+    p {
+      font-size: 15px;
+      color: $gray-32;
+    }
+  }
+
+  &__copyright {
+    grid-area: copyright;
+    display: flex;
+    align-items: flex-end;
+
+    @include responsive(mobile) {
+      margin-top: 16px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 15px;
+
+      @include responsive(desktop) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__logos {
+    grid-area: logos;
+
+    @include responsive(desktop) {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  &__logos-item {
+    @include responsive(portrait) {
+      margin-top: 24px;
+    }
+
+    @include responsive(desktop) {
+      margin-right: 40px;
+    }
+  }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  color: $dark-default;
+  margin: 0;
+}
+
+h1 {
+  font-size: 48px;
+
+  @include responsive(portrait) {
+    font-size: 40px;
+  }
+
+  @include responsive(landscapedesktop) {
+    font-size: 48px;
+  }
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 24px;
+
+  @include responsive(portrait) {
+    font-size: 32px;
+  }
+
+  @include responsive(landscapedesktop) {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: $gray-default;
+    }
+  }
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 24px;
+
+  @include responsive(portrait) {
+    font-size: 24px;
+  }
+
+  @include responsive(landscapedesktop) {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+}
+
+h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+
+  @include responsive(portrait) {
+    font-size: 20px;
+  }
+
+  @include responsive(landscapedesktop) {
+    font-size: 24px;
+  }
+}
+h5 {
+  @include responsive(device) {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  @include responsive(portrait) {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  @include responsive(landscapedesktop) {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+}
+h6 {
+  font-size: 16px;
+  margin-bottom: 8px;
+
+  @include responsive(portrait) {
+    font-size: 17px;
+  }
+
+  @include responsive(landscapedesktop) {
+    font-size: 18px;
+  }
+}
+
+a {
+  color: $dark-default;
+  text-decoration: underline;
+  transition: color 0.5s;
+
+  &:hover {
+    color: $pink-default;
+    text-decoration: none;
+  }
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+.text-xl {
+  font-size: 20px;
+}
+
+.button {
+  background-color: $pink-default;
+  border-radius: 25px;
+  color: $white;
+  border: 0;
+  font-size: 16px;
+  line-height: 1.2225;
+  padding: 12px 32px;
+  cursor: pointer;
+
+  @include responsive(desktop) {
+    font-size: 18px;
+  }
+
+  &--light {
+    background-color: $white;
+    border: 2px solid $pink-default;
+    color: $pink-default;
+  }
+}
+
+.tag {
+  border-radius: 16px;
+  border: 1px solid;
+  padding: 4px 12px 5px;
+  font-size: 14px;
+
+  &:not(:first-child) {
+    margin-left: 8px;
+  }
+
+  &--adult {
+    border-color: $blue-default;
+    color: $blue-default;
+  }
+
+  &--children {
+    border-color: $mint-default;
+    color: $mint-default;
+  }
+}
+
+.owl-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+
+  .owl-dot {
+    margin: 0 6px;
+    border-radius: 50px;
+    background-color: $gray-disabled !important;
+
+    @include responsive(device) {
+      width: 12px;
+      height: 12px;
+    }
+
+    @include responsive(desktop) {
+      width: 20px;
+      height: 20px;
+    }
+
+    &.active {
+      background-color: $pink-default !important;
+    }
+  }
+}

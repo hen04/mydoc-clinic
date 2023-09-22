@@ -1,0 +1,14 @@
+mixin doctorSm(image, name, title, year, adult, children)
+    .doctor-sm
+        .doctor-sm__image
+            img(src="images/" + image alt= name)
+        .doctor-sm__info
+            h5= name
+            .doctor-sm__info-descr
+                p= title
+                p= year
+            .doctor-sm__tags
+                span.tag.tag--adult= adult
+                if children !== ""
+                    span.tag.tag--children= children
+            button(class="button button--light") Записаться на приём

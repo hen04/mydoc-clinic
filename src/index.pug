@@ -1,0 +1,48 @@
+extends templates/layout
+include templates/_doctor-sm
+
+block content
+	.wrapper
+		.main-services
+			h2
+				a(href="#") Медицинские услуги
+			.main-services__links
+				each item in servicesList
+					p
+						a(href="#")= item.item
+
+		.main-doctors
+			h2
+				a(href="#") Наши врачи
+
+			.main-doctors__slider
+				.owl-carousel.js-carousel(data-nav="true")
+					div
+						+doctorSm("doctor-1.jpg", "Иванова Александра Владимировна", "Гастроэнтеролог, врач высшей категории.", "Медицинский стаж 14 лет.", "Взрослый", "Детский")
+					div
+						+doctorSm("doctor-2.jpg", "Степанов Олег Михайлович", "Кардиолог, врач высшей категории.", "Медицинский стаж 24 года.", "Взрослый", "")
+					div
+						+doctorSm("doctor-1.jpg", "Иванова Александра Владимировна", "Гастроэнтеролог, врач высшей категории.", "Медицинский стаж 14 лет.", "Взрослый", "Детский")
+		.main-about
+			.main-about__info
+				.main-about__text
+					h2
+						a(href="#") О клинике
+					p Клиника «My Doc» — универсальная семейная клиника, в которой взрослым и детям оказываются различные виды медицинской помощи.
+					p Мы уважаем наших пациентов, ваше время, здоровье и личное пространство. Вы получите столько внимания лечащего врача, сколько вам требуется. Наши врачи внимательно выслушают вас и помогут решить проблемы, с&nbsp;которыми вы обращаетесь.
+				.main-about__sert
+					h3 Лицензии
+					.owl-carousel.js-sert-carousel(data-dots="true")
+						div
+							img(src="images/sert-1.png" alt="Лицензия Mydoc Clinic")
+						div
+							img(src="images/sert-2.png" alt="Лицензия Mydoc Clinic")
+						div
+							img(src="images/sert-1.png" alt="Лицензия Mydoc Clinic")
+						div
+							img(src="images/sert-2.png" alt="Лицензия Mydoc Clinic")
+						div
+							img(src="images/sert-1.png" alt="Лицензия Mydoc Clinic")
+
+			.main-about__pic
+				img(src="../images/main-page.jpg" alt="О компании")

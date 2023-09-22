@@ -1,0 +1,96 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title MyDoc Clinic
+        meta(name="description" content="")
+        meta(name="keywords" content="")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="css/libs/owl.carousel.min.css")
+        link(rel="stylesheet" href="css/main-style.css")
+
+    body
+        header
+            .wrapper
+                .main-header
+                    .main-header__logo
+                        img(src="images/logo.svg" alt="Mydoc Clinic")
+                    .main-header__menu-btn.js-menu-mobile
+                    .main-header__phone
+                        a(href="tel:+78122222245") 8 (812) 222-22-45
+                        span  многоканальный
+                    .main-header__blind
+                        button(class="blind-version")
+                            img(src="images/sunglasses.svg" alt="")
+                            span Версия для слабовидящих
+                    .main-header__button
+                        button(class="button") Записаться на приём
+                    .main-header__menu
+                        ul
+                            each item in menu.slice(0,8)
+                                if item.submenu === false
+                                    li
+                                        a(href= item.url)= item.title
+                                else
+                                    li(class="has-submenu")
+                                        span
+                                            a(href= item.url)= item.title
+                                            img(src="images/chevron-down.svg" alt="")
+                                        ul(class="submenu")
+                                            each subtitle in item.submenu
+                                                li
+                                                    a(href= item.url)= subtitle.subtitle
+
+                    .main-header__search
+                        img(src="images/search.svg" alt="")
+        main
+            block content
+
+        footer
+            .wrapper
+                .main-footer
+                    .main-footer__logo
+                        img(src="images/logo.svg" alt="")
+                    .main-footer__menu
+                        ul
+                            each item in menu
+                                li
+                                    a(href="")= item.title
+                    .main-footer__links
+                        .main-footer__address-item
+                            .main-footer__address-text
+                                h6 Наш адрес:
+                                p г. Санкт-Петербург<br> ул. Ждановская д. 45
+                            .main-footer__address-phone
+                                h6 Телефон для записи:
+                                p
+                                    a(href="tel:+78122222245") 8 (812) 222-22-45
+                                    span  многоканальный
+                        .main-footer__address-item
+                            .main-footer__address-time
+                                h6 Часы работы:
+                                p 09:00 – 21:00
+                                    span  без&nbsp;выходных
+                            .main-footer__address-mail
+                                h6 E-mail:
+                                p
+                                    a(href="mailto:mail@mydoc.ru") mail@mydoc.ru
+                    .main-footer__info
+                        p Информация, представленная на сайте, не может быть использована для постановки диагноза, назначения лечения и не заменяет очный приём врача.
+                        p Лицензия № ЛО-78-01-009960 выдана Комитетом по здравоохранению г. Санкт-Петербурга 09 июля 2019 года
+                        p Не является публичной офертой
+                    .main-footer__copyright
+                        p &copy; 2023. Все права защищены
+                    .main-footer__logos
+                        .main-footer__logos-item
+                            img(src="images/ministry-health-rus.svg" alt="Министерство Здравоохранения РФ")
+                        .main-footer__logos-item
+                            img(src="images/gosuslugi-logo.svg" alt="Госуслуги")
+
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        script(src="js/libs/owl.carousel.min.js")
+        script(src="js/main-script.js")

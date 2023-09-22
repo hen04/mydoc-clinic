@@ -1,0 +1,68 @@
+.doctor-sm {
+    display: flex;
+
+    @include responsive(device) {
+        flex-flow: column;
+    }
+
+    &__image {
+        @include responsive(mobile) {
+            min-width: 272px;
+            width: 272px;
+        }
+
+        @include responsive(portrait) {
+            width: 100%;
+        }
+
+        @include responsive(desktop) {
+            min-width: 280px;
+            width: 280px;
+        }
+
+        img {
+            border-radius: 40px;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-flow: column;
+
+        @include responsive(device) {
+            padding-top: 24px;
+        }
+
+        @include responsive(desktop) {
+            padding-left: 24px;
+        }
+
+        .button {
+            @include responsive(device) {
+                margin-top: 24px;
+            }
+
+            @include responsive(desktop) {
+                margin-top: auto;
+            }
+        }
+    }
+
+    &__info-descr {
+        p {
+            font-size: 15px;
+            margin-bottom: 4px;
+
+            @include responsive(desktop) {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    &__tags {
+        margin-top: 4px;
+    }
+}
