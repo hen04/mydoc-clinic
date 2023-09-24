@@ -1,0 +1,23 @@
+.doctors {
+    &__list {
+        display: flex;
+        flex-flow: wrap;
+
+        .doctor-sm {
+            margin-bottom: 40px;
+
+            @include responsive(portraitdesktop) {
+                width: 50%;
+            }
+
+            .button {
+                max-width: 250px;
+                box-sizing: border-box;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

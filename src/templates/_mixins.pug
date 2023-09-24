@@ -1,0 +1,15 @@
+mixin menu(currentTitle)
+	ul
+		each item in menu.slice(0,8)
+			if item.submenu === false
+				li
+					a(href= item.url)= item.title
+			else
+			  	li(class="has-submenu")
+				  	span
+					  	a(href= item.url)= item.title
+					  	img(src="images/chevron-down.svg" alt="")
+				  	ul(class="submenu")
+						each subtitle in item.submenu
+							li
+								a(href= item.url)= subtitle.subtitle

@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/libs/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/libs/jquery.arcticmodal-0.3.css">
     <link rel="stylesheet" href="css/main-style.css">
   </head>
   <body>
@@ -28,21 +29,21 @@
           </div>
           <div class="main-header__menu">
             <ul>
-              <li><a href="#about">Медицинские услуги</a></li>
-              <li><a href="#details">Врачи</a></li>
-              <li><a href="#characteristic">Чекапы</a></li>
-              <li><a href="#history">Остеопатия</a></li>
-              <li class="has-submenu"><span><a href="#accessories">О клинике</a><img src="images/chevron-down.svg" alt=""></span>
+              <li><a href="services.html">Медицинские услуги</a></li>
+              <li><a href="doctors.html">Врачи</a></li>
+              <li><a href="checkup.html">Чекапы</a></li>
+              <li><a href="osteopathy.html">Остеопатия</a></li>
+              <li class="has-submenu"><span><a href="about.html">О клинике</a><img src="images/chevron-down.svg" alt=""></span>
                 <ul class="submenu">
-                  <li><a href="#accessories">Обращение к главному врачу</a></li>
-                  <li><a href="#accessories">Оформление справки в налоговые органы</a></li>
-                  <li><a href="#accessories">Как подготовиться к исследованиям</a></li>
-                  <li><a href="#accessories">Вакансии</a></li>
+                  <li><a href="about.html">Обращение к главному врачу</a></li>
+                  <li><a href="about.html">Оформление справки в налоговые органы</a></li>
+                  <li><a href="about.html">Как подготовиться к исследованиям</a></li>
+                  <li><a href="about.html">Вакансии</a></li>
                 </ul>
               </li>
-              <li><a href="#accessories">ДМО</a></li>
-              <li><a href="#accessories">Контакты</a></li>
-              <li><a href="#accessories">Пациентам</a></li>
+              <li><a href="dmo.html">ДМО</a></li>
+              <li><a href="contacts.html">Контакты</a></li>
+              <li><a href="patients.html">Пациентам</a></li>
             </ul>
           </div>
           <div class="main-header__search"><img src="images/search.svg" alt=""></div>
@@ -101,46 +102,49 @@
             <div class="owl-carousel js-carousel" data-nav="true">
               <div>
                 <div class="doctor-sm">
-                  <div class="doctor-sm__image"><img src="images/doctor-1.jpg" alt="Иванова Александра Владимировна"/></div>
+                  <div class="doctor-sm__image"><a href="doctor-item.html"><img src="images/doctor-1.jpg" alt="Иванова Александра Владимировна"/></a></div>
                   <div class="doctor-sm__info">
-                    <h5>Иванова Александра Владимировна</h5>
-                    <div class="doctor-sm__info-descr">
-                      <p>Гастроэнтеролог, врач высшей категории.</p>
-                      <p>Медицинский стаж 14 лет.</p>
-                    </div>
-                    <div class="doctor-sm__tags"><span class="tag tag--adult">Взрослый</span><span class="tag tag--children">Детский</span>
-                    </div>
-                    <button class="button button--light">Записаться на приём</button>
+                    <div class="doctor-sm__info-content">
+                      <h5><a href="doctor-item.html">Иванова Александра Владимировна</a></h5>
+                      <div class="doctor-sm__info-descr">
+                        <p>Гастроэнтеролог, врач высшей категории.</p>
+                        <p>Медицинский стаж 14 лет.</p>
+                      </div>
+                      <div class="doctor-sm__tags"><span class="tag tag--adult">Взрослый</span><span class="tag tag--children">Детский</span>
+                      </div>
+                    </div><a class="button button--light js-modal" href="#appointmentModal">Записаться на приём</a>
                   </div>
                 </div>
               </div>
               <div>
                 <div class="doctor-sm">
-                  <div class="doctor-sm__image"><img src="images/doctor-2.jpg" alt="Степанов Олег Михайлович"/></div>
+                  <div class="doctor-sm__image"><a href="doctor-item.html"><img src="images/doctor-2.jpg" alt="Степанов Олег Михайлович"/></a></div>
                   <div class="doctor-sm__info">
-                    <h5>Степанов Олег Михайлович</h5>
-                    <div class="doctor-sm__info-descr">
-                      <p>Кардиолог, врач высшей категории.</p>
-                      <p>Медицинский стаж 24 года.</p>
-                    </div>
-                    <div class="doctor-sm__tags"><span class="tag tag--adult">Взрослый</span>
-                    </div>
-                    <button class="button button--light">Записаться на приём</button>
+                    <div class="doctor-sm__info-content">
+                      <h5><a href="doctor-item.html">Степанов Олег Михайлович</a></h5>
+                      <div class="doctor-sm__info-descr">
+                        <p>Кардиолог, врач высшей категории.</p>
+                        <p>Медицинский стаж 24 года.</p>
+                      </div>
+                      <div class="doctor-sm__tags"><span class="tag tag--adult">Взрослый</span>
+                      </div>
+                    </div><a class="button button--light js-modal" href="#appointmentModal">Записаться на приём</a>
                   </div>
                 </div>
               </div>
               <div>
                 <div class="doctor-sm">
-                  <div class="doctor-sm__image"><img src="images/doctor-1.jpg" alt="Иванова Александра Владимировна"/></div>
+                  <div class="doctor-sm__image"><a href="doctor-item.html"><img src="images/doctor-1.jpg" alt="Иванова Александра Владимировна"/></a></div>
                   <div class="doctor-sm__info">
-                    <h5>Иванова Александра Владимировна</h5>
-                    <div class="doctor-sm__info-descr">
-                      <p>Гастроэнтеролог, врач высшей категории.</p>
-                      <p>Медицинский стаж 14 лет.</p>
-                    </div>
-                    <div class="doctor-sm__tags"><span class="tag tag--adult">Взрослый</span><span class="tag tag--children">Детский</span>
-                    </div>
-                    <button class="button button--light">Записаться на приём</button>
+                    <div class="doctor-sm__info-content">
+                      <h5><a href="doctor-item.html">Иванова Александра Владимировна</a></h5>
+                      <div class="doctor-sm__info-descr">
+                        <p>Гастроэнтеролог, врач высшей категории.</p>
+                        <p>Медицинский стаж 14 лет.</p>
+                      </div>
+                      <div class="doctor-sm__tags"><span class="tag tag--adult">Взрослый</span><span class="tag tag--children">Детский</span>
+                      </div>
+                    </div><a class="button button--light js-modal" href="#appointmentModal">Записаться на приём</a>
                   </div>
                 </div>
               </div>
@@ -223,9 +227,37 @@
           </div>
         </div>
       </div>
+      <div class="hidden">
+        <div class="box-modal" id="reviewModal">
+          <div class="box-modal_close arcticmodal-close"></div>
+          <h3>Оставить отзыв</h3>
+          <div class="review-form">
+            <form>
+              <input class="mc-input" type="text" id="review" name="review" placeholder="Оставить отзыв*">
+              <textarea class="mc-textarea" id="text" name="text" placeholder="Текст отзыва*"></textarea><span class="warning">Мы не публикуем отзывы, которые содержат ненормативную лексику или оскорбления.</span>
+              <button class="button button--light button--lg">Оставить отзыв</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="hidden">
+        <div class="box-modal" id="appointmentModal">
+          <div class="box-modal_close arcticmodal-close"></div>
+          <h3>Записаться на приём</h3>
+          <div class="review-form">
+            <form>
+              <input class="mc-input" type="text" id="name" name="name" placeholder="ФИО пациента*" required>
+              <input class="mc-input" type="tel" id="phone" name="phone" placeholder="Телефон*" required>
+              <textarea class="mc-textarea" placeholder="Комментарий"></textarea><span class="warning">Нажимая на кнопку Записаться, вы соглашаетесь с условиями оферты</span>
+              <button class="button button--light button--lg">Записаться на приём</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/libs/owl.carousel.min.js"></script>
+    <script src="js/libs/jquery.arcticmodal-0.3.min.js"></script>
     <script src="js/main-script.js"></script>
   </body>
 </html>

@@ -1,0 +1,41 @@
+.mc-input,
+.mc-textarea {
+    border-radius: 40px;
+    font-size: 20px;
+    padding: 16px 20px;
+    line-height: 1.4;
+    border: 2px solid $gray-default;
+    color: $gray-default;
+    margin-bottom: 24px;
+    resize: none;
+    outline: none;
+
+    @include responsive(desktop) {
+        padding: 20px;
+        margin-bottom: 32px;
+    }
+
+    &:hover {
+        border: 2px solid $pink-default;
+    }
+
+    &:focus {
+        border: 2px solid $pink-default;
+    }
+
+    &:active {
+        border: 2px solid green;
+    }
+}
+
+.mc-textarea {
+    min-height: 160px;
+}
+
+.warning {
+    display: block;
+    margin-bottom: 24px;
+    padding-left: 22px;
+    font-size: 16px;
+    color: $gray-breadcrumbs;
+}

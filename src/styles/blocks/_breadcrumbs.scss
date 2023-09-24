@@ -1,0 +1,32 @@
+.breadcrumbs {
+    padding: 0;
+    display: flex;
+    flex-flow: wrap;
+
+    @include responsive(desktop) {
+        margin: -40px 0 40px;
+    }
+
+    li {
+        list-style: none;
+        color: $gray-breadcrumbs;
+        position: relative;
+        padding-right: 32px;
+
+        @include responsive(mobile) {
+            margin-left: 4px;
+        }
+
+        &:not(:last-child) {
+            &:after {
+                content: '/';
+                position: absolute;
+                right: 12px;
+            }
+        }
+    }
+
+    a {
+        color: $gray-breadcrumbs;
+    }
+}

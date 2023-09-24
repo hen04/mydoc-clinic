@@ -1,0 +1,174 @@
+.doctor-item {
+    display: grid;
+
+    @include responsive(device) {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+        "name"
+        "photo"
+        "info";
+
+    }
+
+    @include responsive(landscapedesktop) {
+        grid-template-columns: repeat(2, 40% 60%);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+        "photo name"
+        "photo info";
+    }
+
+    &__photo {
+        grid-area: photo;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+
+        @include responsive(portrait) {
+            max-width: 492px;
+        }
+
+        @include responsive(landscapedesktop) {
+
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__phone {
+        margin: 24px 0;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+        align-items: center;
+
+        @include responsive(landscapedesktop) {
+            margin: 40px 0;
+        }
+
+        a {
+            font-size: 20px;
+            text-decoration: none;
+            font-weight: 500;
+
+            &:not(:last-child) {
+                margin: 0 8px 8px;
+            }
+
+            &:last-child {
+                @include responsive(mobile) {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            @include responsive(landscapedesktop) {
+                margin: 0 12px;
+            }
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &__info {
+        overflow: hidden;
+
+        @include responsive(device) {
+            margin-top: 40px;
+        }
+
+        @include responsive(landscapedesktop) {
+            grid-area: info;
+            padding-left: 48px;
+            box-sizing: border-box;
+        }
+    }
+
+    &__main {
+        @include responsive(device) {
+            margin-bottom: 40px;
+        }
+
+        @include responsive(landscapedesktop) {
+            grid-area: name;
+            padding-left: 48px;
+            box-sizing: border-box;
+            margin-bottom: 64px;
+        }
+    }
+}
+
+.doctor-item-content {
+    &__block {
+        @include responsive(desktop) {
+            margin-bottom: 64px;
+        }
+    }
+
+    &__slider {
+        margin-top: 40px;
+
+        img {
+            border-radius: 20px;
+        }
+    }
+}
+
+.doc-spec {
+    display: flex;
+
+    &:not(:last-child) {
+        margin-bottom: 4px;
+    }
+
+    &__title {
+        color: rgba($gray-default, 0.7);
+    }
+
+    &__name {
+        margin-left: 8px;
+        color: $gray-default;
+    }
+}
+
+.review-list-button {
+    margin-bottom: 40px;
+}
+
+.review-list {
+    margin-bottom: 64px;
+
+    &__item {
+        border-radius: 40px;
+        box-shadow: 0 0 20px rgba(#393939, 0.2);
+        padding: 32px;
+
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            margin: 0;
+            color: rgba($gray-default, 0.7)
+        }
+    }
+}
+
+.review-form {
+    form {
+        display: flex;
+        flex-flow: column;
+    }
+}
+

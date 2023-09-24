@@ -1,0 +1,116 @@
+extends templates/layout
+
+block content
+	.wrapper
+		ul.breadcrumbs
+			li
+				a(href="/") Главная
+			li
+				a(href="doctors.html") Врачи
+			li Фамилия Имя врача
+		.doctor-item
+			.doctor-item__photo
+				img(src="../images/doctor-item.jpg" alt="Иванова Александра Владимировна")
+				.doctor-item__phone
+					a(href="https://wa.me/79999999999")
+						img(src="../images/whatsapp.svg" alt="")
+					a(href="https://t.me/+79999999999")
+						img(src="../images/telegram.svg" alt="")
+					a(href="") +7 999 999-99-99
+				a(class="button button--light js-modal" href="#appointmentModal") Записаться на приём
+
+			.doctor-item__main
+				h1 Иванова Александра Владимировна
+				.doctor-item__info-descr
+					p Гастроэнтеролог, врач высшей категории.
+					p Медицинский стаж 14 лет.
+				.doctor-item__tags
+					span.tag.tag--adult Взрослый
+					span.tag.tag--children Детский
+
+			.doctor-item__info
+				.tabs-wrapper
+					.tabs-header
+						.tabs-header-item.active(data-tab="#tab-1") О&nbsp;враче
+						.tabs-header-item(data-tab="#tab-2") Сертификаты
+						.tabs-header-item(data-tab="#tab-3") Отзывы
+					.tabs-content
+						.tabs-content-item.active#tab-1
+							.doctor-item-content
+								.doctor-item-content__block
+									h3 Образование
+									p Окончила Карагандинский государственный медицинский институт по специальности «Лечебное дело» в 1984 году.
+									p В 1985 году прошла интернатуру по специальности «Терапия».
+									p В 2006 году прошла переподготовку по специальности «Нефрология».
+									p В 2011 году прошла интернатуру по специальности «Общая врачебная практика (семейная медицина)».
+								.doctor-item-content__block
+									h3 Стаж работы
+									p Медицинский стаж 14 лет.
+								.doctor-item-content__block
+									h3 Знание языков
+									p Корейский, Английский
+								.doctor-item-content__block
+									h3 Область клинических и профессиональных интересов
+									p Диагностика и лечение артериальной гипертензии
+									p Диагностика лечение отечного синдрома, в том числе у беременных
+									p Хроническая болезнь почек
+								.doctor-item-content__block
+									h3 Научные публикации
+									p Здесь перечислить, какие публикации есть у врача
+
+						.tabs-content-item#tab-2
+							.doctor-item-content
+								.doctor-item-content__block
+									h3 Квалификация и сертификаты
+									p Врач высшей квалификационной категории
+									p В 2001 году повысила квалификацию в ГОУВПО Московской медицинской академии им. И.М. Сеченова по циклу «Современные принципы диагностики и лечения болезней почек».
+								.doctor-item-content__block
+									h5 Военно-медицинская академия им. С.М. Кирова
+									.doc-spec
+										span.doc-spec__title Специальность:
+										span.doc-spec__name Врач-нефролог
+									.doc-spec
+										span.doc-spec__title Квалификация:
+										span.doc-spec__name Нефрология
+									.doctor-item-content__slider
+										.owl-carousel.js-sert-carousel(data-dots="true")
+											div
+												img(src="images/diploma-1.png" alt="Диплом")
+											div
+												img(src="images/diploma-1.png" alt="Диплом")
+
+								.doctor-item-content__block
+									h5 Военно-медицинская академия им. С.М. Кирова
+									.doc-spec
+										span.doc-spec__title Специальность:
+										span.doc-spec__name Врач-нефролог
+									.doc-spec
+										span.doc-spec__title Квалификация:
+										span.doc-spec__name Нефрология
+									.doctor-item-content__slider
+										.owl-carousel.js-sert-carousel(data-items='{0:{"items":1},768:{"items":2},1280:{"items":3}}' data-slide='{0:{"slide":1},768:{"slide":2},1280:{"slide":3}}')
+											div
+												img(src="images/diploma-1.png" alt="Диплом")
+											div
+												img(src="images/diploma-1.png" alt="Диплом")
+											div
+												img(src="images/diploma-1.png" alt="Диплом")
+											div
+												img(src="images/diploma-1.png" alt="Диплом")
+											div
+												img(src="images/diploma-1.png" alt="Диплом")
+
+						.tabs-content-item#tab-3
+							.review-list-button
+								a(class="button button--light js-modal" href="#reviewModal") Оставить отзыв
+							.review-list
+								each item in reviewList
+									.review-list__item
+										p= item.text
+										p= item.text
+										.review-list__footer
+											p= item.name
+											p= item.date
+
+							include templates/_pagination
+

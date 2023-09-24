@@ -24,6 +24,7 @@
             border-radius: 40px;
             max-width: 100%;
             height: auto;
+            display: block;
         }
     }
 
@@ -35,19 +36,30 @@
             padding-top: 24px;
         }
 
+        @include responsive(portrait) {
+            height: 100%;
+            padding-right: 24px;
+        }
+
         @include responsive(desktop) {
-            padding-left: 24px;
+            padding: 0 24px 4px 24px;
         }
 
         .button {
-            @include responsive(device) {
-                margin-top: 24px;
-            }
+            margin-top: auto;
+        }
 
-            @include responsive(desktop) {
-                margin-top: auto;
+        a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
             }
         }
+    }
+
+    &__info-content {
+        margin-bottom: 24px;
     }
 
     &__info-descr {
@@ -63,6 +75,6 @@
     }
 
     &__tags {
-        margin-top: 4px;
+        margin-top: 8px;
     }
 }
