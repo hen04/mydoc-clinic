@@ -1,19 +1,23 @@
 extends templates/layout
 include templates/_doctor-sm
+include templates/_mixins
+
+block menu
+	+menu()
 
 block content
 	.wrapper
 		.main-services
 			h2
-				a(href="#") Медицинские услуги
+				a(href="services.html") Медицинские услуги
 			.main-services__links
 				each item in servicesList
 					p
-						a(href="#")= item.item
+						a(href="service-item.html")= item.item
 
 		.main-doctors
 			h2
-				a(href="#") Наши врачи
+				a(href="doctors.html") Наши врачи
 
 			.main-doctors__slider
 				.owl-carousel.js-carousel(data-nav="true")

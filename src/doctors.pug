@@ -1,5 +1,11 @@
 extends templates/layout
 include templates/_doctor-sm
+include templates/_mixins
+
+block menu
+	- var currentTitle = "doctors.html";
+	+menu(currentTitle)
+
 
 block content
 	.wrapper
