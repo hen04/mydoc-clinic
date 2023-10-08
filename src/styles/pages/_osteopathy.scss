@@ -1,0 +1,68 @@
+.osteopathy {
+
+    &__content {
+        display: grid;
+        grid-gap: 72px;
+        grid-template-columns: repeat(2, 1fr);
+
+        @include responsive(mobile) {
+            grid-gap: 40px;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__image {
+        @include responsive(mobile) {
+            display: none;
+        }
+
+        margin-bottom: 24px;
+
+        @include responsive(portraitdesktop) {
+            margin-bottom: 64px;
+        }
+
+        img {
+            border-radius: 40px;
+            display: block;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    &__doctors {
+        .doctor-sm {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__sert {
+        max-width: 380px;
+        margin: 0 auto;
+
+        @include responsive(mobile) {
+            margin-bottom: 40px;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+
+            @include responsive(portrait) {
+                flex-flow: column;
+            }
+        }
+
+        img,
+        span {
+            display: block;
+        }
+
+        span {
+            @include responsive(portrait) {
+                text-align: center;
+                margin-top: 16px;
+            }
+        }
+    }
+}

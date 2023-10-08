@@ -1,0 +1,65 @@
+.patient {
+
+    &__content {
+        display: grid;
+        grid-gap: 72px;
+        grid-template-columns: repeat(2, 1fr);
+        box-sizing: border-box;
+
+        @include responsive(mobile) {
+            grid-gap: 40px;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__info {
+        ul {
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 16px;
+            padding-left: 32px;
+
+            &:before {
+                content: url('../images/check.svg');
+                background-color: transparent;
+                width: 24px;
+                height: 24px;
+                top: -2px;
+            }
+        }
+    }
+
+    &__info-ref {
+        margin-top: 64px;
+    }
+
+    &__ref-dop {
+        background-color: $gray-time;
+        padding: 32px 32px 24px;
+        border-radius: 20px;
+        margin-bottom: 64px;
+    }
+
+    &__ref-list {
+        display: grid;
+        grid-gap: 40px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.ref-download-item {
+    display: flex;
+    flex-flow: column;
+
+    img {
+        width: 104px;
+        height: 104px;
+        display: block;
+    }
+
+    span {
+        margin-top: 24px;
+    }
+}

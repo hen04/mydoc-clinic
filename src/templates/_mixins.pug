@@ -9,11 +9,31 @@ mixin menu(currentTitle)
 					li
 						a(href= item.url)= item.title
 			else
-				li(class="has-submenu")
-					span
-						a(href= item.url)= item.title
-						img(src="images/chevron-down.svg" alt="")
-					ul(class="submenu")
-						each subtitle in item.submenu
-							li
-								a(href= item.url)= subtitle.subtitle
+				if item.url === currentTitle
+					li(class="has-submenu active")
+						span
+							a(href= item.url)= item.title
+							img(src="images/chevron-down.svg" alt="")
+						ul(class="submenu")
+							each subtitle in item.submenu
+								li
+									a(href= subtitle.url)= subtitle.subtitle
+				else
+					if item.url === currentTitle
+						li(class="has-submenu active")
+							span
+								a(href= item.url)= item.title
+								img(src="images/chevron-down.svg" alt="")
+							ul(class="submenu")
+								each subtitle in item.submenu
+									li
+										a(href= subtitle.url)= subtitle.subtitle
+					else
+						li(class="has-submenu")
+							span
+								a(href= item.url)= item.title
+								img(src="images/chevron-down.svg" alt="")
+							ul(class="submenu")
+								each subtitle in item.submenu
+									li
+										a(href= subtitle.url)= subtitle.subtitle

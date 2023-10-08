@@ -1,0 +1,30 @@
+extends templates/layout
+include templates/_mixins
+
+block menu
+	- var currentTitle = "checkup.html";
+	+menu(currentTitle)
+
+
+block content
+	.wrapper
+		ul.breadcrumbs
+			li
+				a(href="index.html") Главная
+		.checkup
+			h1 Чекапы
+
+			.checkup__list
+				each item in checkList
+					.checkup__item
+						.checkup-sm
+							a(href="checkup-item.html")
+								img(src= "images/" + item.img alt= item.title)
+							h4
+								a(href="checkup-item.html")= item.title
+							p= item.descr
+							.checkup-sm__footer
+								.checkup-sm__price= item.price + " ₽"
+								a(href="checkup-item.html" class="button button--light") Выбрать
+
+			include templates/_pagination

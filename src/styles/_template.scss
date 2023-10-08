@@ -4,7 +4,15 @@ body {
   min-height: 100vh;
   background-color: #ffffff;
   color: $gray-default;
-  font: normal 18px/1.35 "Roboto", sans-serif;
+  font: normal 16px/1.35 "Roboto", sans-serif;
+
+  @include responsive(portrait) {
+    font-size: 17px;
+  }
+
+  @include responsive(desktop) {
+    font-size: 18px;
+  }
 
   &.menu-opened {
     main,
@@ -191,6 +199,13 @@ main {
       margin-top: 24px;
     }
 
+    li {
+      padding: 0;
+      &:before {
+        content: none;
+      }
+    }
+
     &.opened {
       display: block;
 
@@ -245,6 +260,8 @@ main {
 
     li {
       list-style: none;
+      margin-bottom: 0;
+      position: static;
 
       @include responsive(device) {
         padding: 12px 24px;
@@ -274,12 +291,12 @@ main {
 
     li:not(:last-child) {
       @include responsive(desktop) {
-        padding-right: 32px;
+        padding-right: 40px;
       }
     }
 
     .has-submenu {
-      padding: 0 24px;
+      padding: 0 24px 0 0;
 
       span {
         display: flex;
@@ -388,7 +405,7 @@ main {
     display: flex;
     width: 24px;
     height: 24px;
-    margin: auto 6px 6px auto;
+    margin: auto 6px 3px auto;
 
     @include responsive(device) {
       margin-bottom: auto;
@@ -468,6 +485,13 @@ main {
 
       @include responsive(desktop) {
         display: flex;
+      }
+    }
+
+    li {
+      padding: 0;
+      &:before {
+        content: none;
       }
     }
 
@@ -698,7 +722,7 @@ h5 {
 }
 h6 {
   font-size: 16px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 
   @include responsive(portrait) {
     font-size: 17px;
@@ -714,9 +738,32 @@ a {
   text-decoration: underline;
   transition: color 0.5s;
 
-  &:hover {
+  &:hover(:not(.button)) {
     color: $pink-default;
     text-decoration: none;
+  }
+}
+
+ul {
+  margin: 0 0 16px;
+  padding-left: 20px;
+
+  li {
+    list-style: none;
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: $pink-default;
+      left: 0;
+      top: 4px;
+    }
   }
 }
 

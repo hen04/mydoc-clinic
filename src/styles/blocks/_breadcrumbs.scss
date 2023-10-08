@@ -11,7 +11,8 @@
         list-style: none;
         color: $gray-breadcrumbs;
         position: relative;
-        padding-right: 32px;
+        padding: 0 32px 0 0;
+        margin-bottom: 0;
 
         @include responsive(mobile) {
             margin-left: 4px;
@@ -23,6 +24,10 @@
                 position: absolute;
                 right: 12px;
             }
+        }
+
+        &:before {
+            content: none;
         }
     }
 

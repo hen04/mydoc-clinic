@@ -1,0 +1,12 @@
+extends templates/layout
+include templates/_mixins
+
+block menu
+	- var currentTitle = "contacts.html";
+	+menu(currentTitle)
+
+
+block content
+	.wrapper
+		.contacts
+			h1 Контакты

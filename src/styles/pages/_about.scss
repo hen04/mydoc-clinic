@@ -1,0 +1,63 @@
+.about {
+
+    &__content {
+        display: flex;
+        flex-flow: wrap;
+
+        @include responsive(mobile) {
+            flex-flow: column-reverse;
+        }
+    }
+
+    &__info {
+        @include responsive(portraitdesktop) {
+            width: 60%;
+            padding-right: 40px;
+            box-sizing: border-box;
+        }
+    }
+
+    &__image-sert {
+        @include responsive(portraitdesktop) {
+            width: 40%;
+        }
+    }
+
+    &__image {
+        margin-bottom: 24px;
+
+        @include responsive(portraitdesktop) {
+            margin-bottom: 64px;
+        }
+    }
+
+    &__sert {
+        max-width: 380px;
+        margin: 0 auto;
+
+        @include responsive(mobile) {
+            margin-bottom: 40px;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+
+            @include responsive(portrait) {
+                flex-flow: column;
+            }
+        }
+
+        img,
+        span {
+            display: block;
+        }
+
+        span {
+            @include responsive(portrait) {
+                text-align: center;
+                margin-top: 16px;
+            }
+        }
+    }
+}

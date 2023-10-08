@@ -1,0 +1,40 @@
+extends templates/layout
+include templates/_mixins
+
+block menu
+	- var currentTitle = "about.html";
+	+menu(currentTitle)
+
+
+block content
+	.wrapper
+		ul.breadcrumbs
+			li
+				a(href="index.html") Главная
+		.vacancy
+			h1 Вакансии
+
+			.vacancy__content
+				.vacancy__info
+					p Заполните форму обратной связи или свяжитесь с сотрудниками Департамента персонала по почте&nbsp;
+						a(href="mailto:personal@mydocclinic.ru") personal@mydocclinic.ru
+						|  или по телефону&nbsp;
+						a(href="tel:+79999999") +7 999-99-99
+					p Кандидатам будет предложено пройти следующие этапы отбора:
+					ul
+						li телефонное собеседование;
+						li встреча с сотрудниками департамента персонала;
+						li для медицинских специалистов: проверка мануальных навыков или собеседование с главным специалистом по направлению;
+						li предложение о работе в клинике «My Doc».
+					.vacancy__form
+						form()
+							input(type="text" id="name" name="name" class="mc-input" placeholder="ФИО*")
+							input(type="text" id="phone" name="phone" class="mc-input" placeholder="Телефон*")
+							input(type="text" id="mail" name="mail" class="mc-input" placeholder="E-mail*")
+							textarea(id="text" name="text" class="mc-textarea" placeholder="Дополнительная информация")
+							span.mc-check
+								input(type="checkbox" id="vacancy-check" checked)
+								label(for="vacancy-check") Я согласен с условиями обработки&nbsp;
+									a(href="") персональных данных
+							button(class="button button--light button--lg") Отправить отклик
+
