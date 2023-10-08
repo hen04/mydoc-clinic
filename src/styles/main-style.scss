@@ -5,6 +5,15 @@
 @import "pages/index";
 @import "pages/doctors";
 @import "pages/doctor-item";
+@import "pages/services";
+@import "pages/service-item";
+@import "pages/feedback";
+@import "pages/checkup";
+@import "pages/checkup-item";
+@import "pages/about";
+@import "pages/osteopathy";
+@import "pages/patient";
+@import "pages/vacancy";
 @import "blocks/doctor-sm";
 @import "blocks/pagination";
 @import "blocks/tabs";
@@ -12,3 +21,7 @@
 @import "blocks/tags";
 @import "blocks/button";
 @import "blocks/form";
+@import "blocks/filter";
+@import "blocks/price-list";
+@import "blocks/checkup-sm";
+@import "blocks/checkup-item-sm";

@@ -1,0 +1,96 @@
+.price-list {
+    &__header {
+        display: flex;
+
+        .price-list__td--1 {
+            @include responsive(mobile) {
+                display: none;
+            }
+        }
+
+        .price-list__td--2,
+        .price-list__td--3 {
+            @include responsive(device) {
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &__tr {
+        display: flex;
+        align-items: baseline;
+
+        @include responsive(mobile) {
+            flex-flow: wrap;
+            padding: 8px 0;
+        }
+
+        &:nth-child(even) {
+            @include responsive(mobile) {
+                background-color: $gray-98;
+                margin: 0 -24px;
+                padding: 8px 24px;
+            }
+        }
+
+        .price-list__td--2,
+        .price-list__td--3 {
+            font-weight: 500;
+        }
+    }
+
+    &__td {
+        margin: 8px 0;
+
+        &--1 {
+            width: 100%;
+
+            @include responsive(portrait) {
+                width: 50%;
+                padding-right: 24px;
+                box-sizing: border-box;
+            }
+
+            @include responsive(desktop) {
+                width: 65%;
+            }
+        }
+
+        &--2 {
+            width: 25%;
+
+            @include responsive(portrait) {
+                width: 14%;
+            }
+
+            @include responsive(desktop) {
+                width: 10%;
+            }
+        }
+
+        &--3 {
+            width: 25%;
+
+            @include responsive(portrait) {
+                width: 14%;
+            }
+
+            @include responsive(desktop) {
+                width: 10%;
+            }
+        }
+
+        &--4 {
+            width: 50%;
+
+            @include responsive(portrait) {
+                width: 22%;
+            }
+
+            @include responsive(desktop) {
+                width: 15%;
+            }
+        }
+    }
+}

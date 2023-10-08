@@ -1,0 +1,50 @@
+.services {
+    &__category {
+        display: flex;
+        justify-content: space-between;
+
+        @include responsive(device) {
+            flex-flow: wrap-reverse;
+        }
+    }
+
+    &__illness {
+        @include responsive(device) {
+            margin-left: auto;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        margin: 0 0 24px;
+
+        @include responsive(mobile) {
+            flex-flow: column;
+        }
+
+        @include responsive(portraitdesktop) {
+            margin: 0 -32px 40px;
+            flex-flow: wrap;
+        }
+    }
+
+    &__sm {
+        transition: all 0.5s;
+        border-radius: 40px;
+        box-sizing: border-box;
+        margin-bottom: 24px;
+        text-decoration: none;
+
+        @include responsive(portraitdesktop) {
+            width: 50%;
+            padding: 24px 32px 16px;
+        }
+
+        &:hover {
+            background-color: $gray-98;
+            color: inherit;
+        }
+    }
+
+}

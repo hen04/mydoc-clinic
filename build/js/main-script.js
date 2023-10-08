@@ -28,6 +28,7 @@ $(function (){
 	var dots = carousel.data('dots');
 	var auto = carousel.data('auto');
 	var loop = carousel.data('loop');
+	var responsive= carousel.data('responsive');
 	carousel.owlCarousel({
 		responsiveClass: true,
 		nav: nav,
@@ -35,23 +36,7 @@ $(function (){
 		autoplay: auto,
 		loop: loop,
 		autoHeight: false,
-		responsive: {
-			0: {
-				items: 1,
-				margin: 20
-			},
-			768: {
-				margin: 20,
-				slideBy: 2,
-				items: 2,
-				autoHeight: true,
-			},
-			1280: {
-				margin: 32,
-				slideBy: 2,
-				items: 2
-			}
-		}
+		responsive: responsive
 	});
 
 	var carousel = $(".js-sert-carousel");
@@ -71,18 +56,9 @@ $(function (){
 		responsive: {
 			0: {
 				items: items,
+				slideBy: slide,
 				margin: 20,
 				autoHeight: true,
-			},
-			768: {
-				margin: 20,
-				slideBy: slide,
-				items: items,
-			},
-			1280: {
-				margin: 20,
-				slideBy: slide,
-				items: items,
 			}
 		}
 	});

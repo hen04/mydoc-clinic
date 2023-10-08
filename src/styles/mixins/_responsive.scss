@@ -24,6 +24,11 @@ $desktop: 1280px;
       @content;
     }
   }
+  @else if $media == mobilelandscape {
+    @media only screen and (max-width: $landscape) { /* < 1023 */
+      @content;
+    }
+  }
   @else if $media == landscape {
     @media only screen and (min-width: $landscape) and (max-width: $desktop - 1) { /* 1024-1365 */
       @content;

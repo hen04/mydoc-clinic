@@ -1,0 +1,80 @@
+.vacancy {
+    margin-bottom: 64px;
+
+    &__content {
+        display: grid;
+        grid-gap: 72px;
+        grid-template-columns: repeat(2, 1fr);
+        box-sizing: border-box;
+
+        @include responsive(mobilelandscape) {
+            grid-gap: 40px;
+            grid-template-columns: repeat(1, 65%);
+        }
+
+        @include responsive(mobile) {
+            grid-gap: 40px;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__info {
+        ul {
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 16px;
+            padding-left: 32px;
+
+            &:before {
+                content: url('../images/check.svg');
+                background-color: transparent;
+                width: 24px;
+                height: 24px;
+                top: -2px;
+            }
+        }
+    }
+
+    &__form {
+        margin-top: 64px;
+
+        form {
+            display: flex;
+            flex-flow: column;
+        }
+    }
+}
+
+.mc-check {
+    position: relative;
+    margin-bottom: 32px;
+    display: block;
+
+    input[type="checkbox"] {
+        display: none;
+
+        &:checked + label {
+            &:before {
+                content: url('../images/form-checked.svg');
+            }
+        }
+    }
+
+    label {
+        position: relative;
+        padding-left: 24px;
+        cursor: pointer;
+        display: block;
+
+        &:before {
+            content: url('../images/form-check.svg');
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            top: 0;
+        }
+    }
+}

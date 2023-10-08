@@ -8,8 +8,8 @@
     li {
         margin: 0 4px;
 
-        &.current {
-
+        &:before {
+            content: none;
         }
     }
 

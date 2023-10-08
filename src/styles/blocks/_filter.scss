@@ -1,0 +1,62 @@
+.filter {
+    display: flex;
+    margin: 0 0 32px;
+    padding: 0;
+
+    @include responsive(mobile) {
+        overflow-x: auto;
+    }
+}
+
+.filter-item {
+    padding: 12px 20px;
+    list-style: none;
+    cursor: pointer;
+    color: $tags;
+    border-radius: 32px;
+    border: 2px solid $tags;
+    transition: all 0.5s;
+    text-decoration: none;
+    line-height: 1.2225;
+
+    &:before {
+        content: none;
+    }
+
+    @include responsive(device) {
+        font-size: 16px;
+    }
+
+    &:hover {
+        background: $tags;
+
+        a {
+            color: $white;
+        }
+    }
+
+    &:not(:last-child) {
+        margin-right: 16px;
+
+        @include responsive(device) {
+            margin-right: 8px;
+        }
+    }
+
+    &.active {
+        background-color: $tags;
+
+        a {
+            color: $white;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $tags;
+
+        &:hover {
+            color: $white;
+        }
+    }
+}

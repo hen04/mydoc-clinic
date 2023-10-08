@@ -1,0 +1,10 @@
+.checkup-item-sm {
+    border-radius: 40px;
+    padding: 32px;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px rgba(57, 57, 57, 0.2);
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}

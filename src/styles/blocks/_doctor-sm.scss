@@ -31,6 +31,7 @@
     &__info {
         display: flex;
         flex-flow: column;
+        align-items: flex-start;
 
         @include responsive(device) {
             padding-top: 24px;
@@ -47,6 +48,10 @@
 
         .button {
             margin-top: auto;
+
+            &:hover {
+                text-decoration: none;
+            }
         }
 
         a {

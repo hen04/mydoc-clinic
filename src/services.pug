@@ -1,11 +1,25 @@
 extends templates/layout
+include templates/_mixins
+
+block menu
+	- var currentTitle = "services.html";
+	+menu(currentTitle)
 
 block content
 	.wrapper
-		.main-services
+		.services
 			h2
 				a(href="#") Медицинские услуги
-			.main-services__links
-				each item in servicesList
-					p
-						a(href="#")= item.item
+			.services__category
+				include templates/_filter
+				.services__illness
+					a(href="illness-list.html" class="button button--light") Справочник заболеваний
+
+			.services__list
+				each item in servicesList.splice(0,16)
+					a(href="service-item.html").services__sm
+						h3= item.item
+						p= item.info
+
+			include templates/_pagination
+

@@ -1,0 +1,53 @@
+extends templates/layout
+include templates/_doctor-sm
+include templates/_mixins
+
+block menu
+	- var currentTitle = "services.html";
+	+menu(currentTitle)
+
+block content
+	.wrapper
+		ul.breadcrumbs
+			li
+				a(href="index.html") Главная
+			li
+				a(href="services.html") Медицинские услуги
+		.service-item
+			h1 Гинекология
+			.service-item__info
+				.service-item__text
+					p Клиника My Doc предоставляет пациентам комплексную поддержку в сфере гастроэнтерологии. Мы проводим лечение, профилактику и обследования при различных патологиях органов пищеварительной системы: гастрита, дисбактериоза, язвенной болезни и др. В клинике в Санкт-Петербурге работают опытные врачи-гастроэнтерологи. Для диагностики применяется оборудование экспертного класса, что позволяет обнаружить патологии на ранних стадиях. Терапия проводится с использованием современных безопасных и эффективных методик. Все обследования и лечение осуществляются без очередей и в комфортных для пациентов условиях.
+				.service-item__link
+					a(href="program-item.html")
+						img(src="images/program-1.jpg" alt="")
+						span Программа ведения беременности
+
+			.service-item__price-list
+				h3 Стоимость услуг гинеколога
+				include templates/_filter
+				.price-list
+					.price-list__header
+						.price-list__td.price-list__td--1
+						.price-list__td.price-list__td--2 в клинике
+						.price-list__td.price-list__td--3 на дому
+						.price-list__td.price-list__td--4
+					.price-list__content
+						each item in priceList
+							.price-list__tr
+								.price-list__td.price-list__td--1= item.title
+								.price-list__td.price-list__td--2= item.clinic + ' ₽'
+								.price-list__td.price-list__td--3= item.home + ' ₽'
+								.price-list__td.price-list__td--4
+									a(href="#appointmentModal" class="button button--light js-modal") Записаться
+
+
+
+			.service-item__doctors
+				h3 Врачи-гинекологи
+				.service-item__doctors-list
+					+doctorSm("noimage-doctor.svg", "Иванова Александра Владимировна", "Гастроэнтеролог, врач высшей категории.", "Медицинский стаж 14 лет.", "Взрослый", "Детский")
+					+doctorSm("doctor-2.jpg", "Степанов Олег Михайлович", "Кардиолог, врач высшей категории.", "Медицинский стаж 24 года.", "Взрослый", "")
+					+doctorSm("doctor-3.jpg", "Крутолобов Максим Станиславович", "Гастроэнтеролог, врач высшей категории.", "Медицинский стаж 14 лет.", "Взрослый", "Детский")
+
+

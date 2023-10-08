@@ -1,0 +1,38 @@
+.checkup-sm {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+
+    a:not(.button) {
+        text-decoration: none;
+
+        &:hover {
+            color: $pink-default;
+            text-decoration: underline;
+        }
+    }
+
+    img {
+        border-radius: 40px 40px 0 0;
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 24px;
+
+        @include responsive(desktop) {
+            margin-bottom: 32px;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+    }
+
+    &__price {
+        font-size: 24px;
+        font-weight: 500;
+    }
+}
