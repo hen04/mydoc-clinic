@@ -1,6 +1,4 @@
 .vacancy {
-    margin-bottom: 64px;
-
     &__content {
         display: grid;
         grid-gap: 72px;
@@ -47,34 +45,3 @@
     }
 }
 
-.mc-check {
-    position: relative;
-    margin-bottom: 32px;
-    display: block;
-
-    input[type="checkbox"] {
-        display: none;
-
-        &:checked + label {
-            &:before {
-                content: url('../images/form-checked.svg');
-            }
-        }
-    }
-
-    label {
-        position: relative;
-        padding-left: 24px;
-        cursor: pointer;
-        display: block;
-
-        &:before {
-            content: url('../images/form-check.svg');
-            position: absolute;
-            left: 0;
-            width: 20px;
-            height: 20px;
-            top: 0;
-        }
-    }
-}

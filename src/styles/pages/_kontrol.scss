@@ -1,0 +1,13 @@
+.kontrol {
+    margin-bottom: 64px;
+
+    &__content {
+        @include responsive(landscapedesktop) {
+            width: 50%;
+        }
+    }
+}
+
+.kontrol-item:not(:last-child) {
+    margin-bottom: 40px;
+}

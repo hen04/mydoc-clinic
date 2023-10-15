@@ -1,0 +1,67 @@
+.contacts {
+    margin-bottom: 64px;
+
+    &__info {
+        margin-bottom: 40px;
+
+        @include responsive(portrait) {
+            width: 80%;
+        }
+
+        @include responsive(landscapedesktop) {
+            width: 60%;
+        }
+    }
+
+    &__address {
+        margin-bottom: 40px;
+
+        @include responsive(desktop) {
+            position: absolute;
+            z-index: 999;
+            border-radius: 40px;
+            background-color: $white;
+            padding: 32px 40px;
+            box-sizing: border-box;
+            top: 80px;
+            left: 40px;
+            min-width: 320px;
+        }
+
+        p {
+            font-size: 16px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+        }
+
+        .lg {
+            font-size: 20px;
+            font-weight: 500;
+            display: block;
+            text-decoration: none;
+        }
+    }
+
+    &__map {
+        position: relative;
+
+        .map {
+            position: relative;
+            overflow: hidden
+        }
+
+        iframe {
+            position: relative;
+            border: 0;
+            height: 400px;
+
+            @include responsive(desktop) {
+                height: 580px;
+            }
+        }
+    }
+}
+

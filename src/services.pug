@@ -7,9 +7,12 @@ block menu
 
 block content
 	.wrapper
+		ul.breadcrumbs
+			li
+				a(href="index.html") Главная
+
 		.services
-			h2
-				a(href="#") Медицинские услуги
+			h2 Медицинские услуги
 			.services__category
 				include templates/_filter
 				.services__illness

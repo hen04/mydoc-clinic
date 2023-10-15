@@ -1,0 +1,67 @@
+extends templates/layout
+include templates/_mixins
+
+block menu
+	- var currentTitle = "about.html";
+	+menu(currentTitle)
+
+
+block content
+	.wrapper
+		ul.breadcrumbs
+			li
+				a(href="index.html") Главная
+		.tax
+			h1 Оформление справки в налоговые органы
+
+			.tax__content
+				.tax__info
+					.tax__info-item
+						h3 Правила оформления справки
+						ul
+							li Справка выдается только на оплаченное лечение. На предоплату и авансовые платежи справка не выдаётся.
+							li В справке об оплате медицинских услуг для предоставления в налоговые органы РФ указывается стоимость услуг по коду 1.
+							li Предельный размер социального налогового вычета составляет 120 000 рублей. Максимальная сумма для возмещения НДФЛ составляет 15 600 рублей в год (13% от 120 000 рублей) для услуг по коду 1.
+							li Срок изготовления справки составляет до 5 рабочих дней.
+							li Просьба обратить внимание: готовые справки являются бланками строгой отчетности и не переоформляются.
+							li Предоставление лицензии медицинской организации в налоговые органы, при условии указания номера лицензии в справке, не является обязательным. Документы, подтверждающие право налогоплательщика на получение социального вычета по расходам.
+							li При необходимости, вы можете получить выписку о наличии лицензии на сайте Федеральной службы по надзору в сфере здравоохранения. Номер лицензии, ИНН организации указаны в сформированной справке.
+					.tax__info-item
+						h3 Оформление заявки
+						p Для оформления справки на получение социального налогового вычета по расходам на лечение необходимо заполнить заявку. Заявка заполняется налогоплательщиком, производившим оплату медицинских услуг, оказанных ему лично или членам его семьи: его супруге (супругу), его родителям, его детям в возрасте до 18 лет (до 24 лет, если дети являются обучающимися по очной форме обучения в организациях, осуществляющих образовательную деятельность).
+						p Обратите внимание, заявка заполняется на каждого налогоплательщика. В случае, если вы хотите распределить суммы между налогоплательщиками семьи, укажите в комментарии сумму, на которую следует оформить справку.
+							strong  Выданные справки не переоформляются.
+
+				.tax__form
+					form(class="tax-form" action="tax.html")
+						.tax-form__body
+							.tax-form__left
+								input(type="text" tabindex="1" id="sirname" name="sirname" class="mc-input" placeholder="Фамилия*" required)
+							.tax-form__right
+								input(type="text" tabindex="2" id="name" name="name" class="mc-input" placeholder="Имя*" required)
+							.tax-form__left
+								input(type="text" tabindex="3" id="secondname" name="secondname" class="mc-input" placeholder="Отчество")
+							.tax-form__right
+								input(type="text" tabindex="4" id="birthday" name="birthday" class="mc-input" placeholder="Дата рождения*" required)
+							.tax-form__left
+								input(type="text" tabindex="5" id="taxnumber" name="taxnumber" class="mc-input" placeholder="ИНН*" required)
+							.tax-form__right
+								div.tax-number
+									a(href="https://www.nalog.gov.ru/rn77/" target="_blank") Узнать ИНН
+							.tax-form__left
+								input(type="text" tabindex="6" id="phone" name="phone" class="mc-input" placeholder="Телефон*" required)
+							.tax-form__right
+
+
+
+								input(type="text" tabindex="7" id="mail" name="mail" class="mc-input" placeholder="E-mail*" required)
+						.tax-form__footer
+							span.mc-check
+								input(type="checkbox" id="tax-check" checked)
+								label(for="tax-check") Я согласен с условиями обработки&nbsp;
+									a(href="") персональных данных
+							button(class="button button--light button--lg") Отправить сообщение
+
+					.form-thankyou.hidden
+						.form-thankyou__content
+							p.success Ваше сообщение отправлено, справка придет на указанную почту.

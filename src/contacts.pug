@@ -10,3 +10,25 @@ block content
 	.wrapper
 		.contacts
 			h1 Контакты
+
+			.contacts__info
+				p Здесь текст, если необходимо -- про то, как добраться на авто, на общественном транспорте.
+
+			.contacts__map
+				.contacts__address
+					h6 г. Санкт-Петербург<br>
+						| ул. Ждановская д. 45
+					p Часы работы:<br>
+						span.lg 09:00 – 21:00
+						| без выходных
+					p Телефон для записи:
+						a(href="tel:+78122222245").lg 8 (812) 222-22-45
+						| многоканальный
+				.map
+					iframe(
+						src="https://yandex.ru/map-widget/v1/?ll=30.265909%2C59.963379&z=17.28&scroll=false"
+						width="100%"
+						frameborder="0"
+						allowfullscreen="true"
+						scroll="false")
+

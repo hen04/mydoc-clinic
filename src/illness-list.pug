@@ -1,0 +1,41 @@
+extends templates/layout
+include templates/_mixins
+
+block menu
+	- var currentTitle = "services.html";
+	+menu(currentTitle)
+
+block content
+	.wrapper
+		ul.breadcrumbs
+			li
+				a(href="index.html") Главная
+
+		.illness-list
+			h2 Справочник заболеваний
+
+			ul.alphabet
+				each item in alphabet
+					li
+						if item.current === true
+							span= item.item
+						else
+							a(href="#")= item.item
+
+			.illness-list__content
+				each item in illnessList
+					.illness-list__item
+						h4= item.title
+						p= item.text
+
+				.illness-list__button
+					a(href="#" class="button button--light") Показать ещё
+
+			.warning-info
+				p
+					a(href="#warningInfo" class="js-modal") Уведомление о последствиях несоблюдения указаний (рекомендаций) медицинской организации
+
+	.hidden
+		#warningInfo.box-modal
+			.box-modal_close.arcticmodal-close
+			p В соответствии с п. 15 Правил предоставления медицинскими организациями платных медицинских услуг, утвержденных Постановлением Правительства Российской Федерации от 04.10.2012 № 1006, следующая организация: ООО My Doc … (далее – в отдельности «Исполнитель» уведомляет пациента о том, что несоблюдение указаний (рекомендаций) медицинской организации (медицинского работника, предоставляющего платную медицинскую услугу), в том числе назначенного режима лечения, могут снизить качество предоставляемой платной медицинской услуги, повлечь за собой невозможность ее завершения в срок или отрицательно сказаться на состоянии здоровья потребителя.
