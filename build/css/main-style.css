@@ -1150,7 +1150,7 @@ p {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .box-modal {
@@ -1159,12 +1159,14 @@ p {
   width: 100%;
   max-width: 640px;
   box-sizing: border-box;
+  border-radius: 24px;
+  padding: 24px;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
   .box-modal {
-    /* < 767 */
-    border-radius: 24px;
-    padding: 24px;
+    /* 768-1279 */
+    border-radius: 32px;
+    padding: 32px;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -1189,6 +1191,46 @@ p {
     /* > 1366 */
     right: 40px;
   }
+}
+
+.form-thankyou__content {
+  text-align: center;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.success {
+  color: #33A045;
+}
+
+.error {
+  color: #C11313;
+}
+
+.mc-check {
+  position: relative;
+  margin-bottom: 32px;
+  display: block;
+}
+.mc-check input[type=checkbox] {
+  display: none;
+}
+.mc-check input[type=checkbox]:checked + label:before {
+  content: url("../images/form-checked.svg");
+}
+.mc-check label {
+  position: relative;
+  padding-left: 24px;
+  cursor: pointer;
+  display: block;
+}
+.mc-check label:before {
+  content: url("../images/form-check.svg");
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  top: 0;
 }
 
 .main-services {
@@ -2097,9 +2139,6 @@ p {
   margin-top: 24px;
 }
 
-.vacancy {
-  margin-bottom: 64px;
-}
 .vacancy__content {
   display: grid;
   grid-gap: 72px;
@@ -2142,30 +2181,278 @@ p {
   flex-flow: column;
 }
 
-.mc-check {
-  position: relative;
+.kontrol {
+  margin-bottom: 64px;
+}
+@media only screen and (min-width: 1024px) {
+  .kontrol__content {
+    /* > 1024 */
+    width: 50%;
+  }
+}
+
+.kontrol-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .tax__info {
+    /* > 1024 */
+    width: 50%;
+  }
+}
+.tax__info-item {
+  margin-bottom: 64px;
+}
+@media only screen and (min-width: 1024px) {
+  .tax__form {
+    /* > 1024 */
+    width: 80%;
+  }
+}
+
+.tax-form {
+  display: flex;
+  flex-flow: column;
+}
+.tax-form__body {
+  display: flex;
+  flex-flow: wrap;
+  box-sizing: border-box;
+}
+.tax-form__left, .tax-form__right {
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .tax-form__left, .tax-form__right {
+    /* > 768 */
+    width: calc(50% - 20px);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .tax-form__left {
+    /* > 768 */
+    margin-right: 20px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .tax-form__right {
+    /* > 768 */
+    margin-left: 20px;
+  }
+}
+.tax-form .tax-number {
   margin-bottom: 32px;
+  align-items: center;
+  display: flex;
+}
+@media only screen and (max-width: 767px) {
+  .tax-form .tax-number {
+    /* < 767 */
+    padding-left: 20px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .tax-form .tax-number {
+    /* > 768 */
+    min-height: 72px;
+  }
+}
+.tax-form__footer .button {
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .tax-form__footer .button {
+    /* > 768 */
+    width: 50%;
+  }
+}
+.tax-form input {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1024px) {
+  .dmo__info {
+    /* > 1024 */
+    width: 60%;
+  }
+}
+.dmo__company-list {
+  margin-top: 64px;
+}
+
+.dmo-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 24px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  .dmo-list {
+    /* 768-1279 */
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+  .dmo-list {
+    /* 1024-1365 */
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 32px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .dmo-list {
+    /* > 1366 */
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 40px;
+  }
+}
+.dmo-list__item img {
+  width: 100%;
+  max-width: 100%;
   display: block;
 }
-.mc-check input[type=checkbox] {
-  display: none;
+
+.contacts {
+  margin-bottom: 64px;
 }
-.mc-check input[type=checkbox]:checked + label:before {
-  content: url("../images/form-checked.svg");
+.contacts__info {
+  margin-bottom: 40px;
 }
-.mc-check label {
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  .contacts__info {
+    /* 768-1279 */
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .contacts__info {
+    /* > 1024 */
+    width: 60%;
+  }
+}
+.contacts__address {
+  margin-bottom: 40px;
+}
+@media only screen and (min-width: 1280px) {
+  .contacts__address {
+    /* > 1366 */
+    position: absolute;
+    z-index: 999;
+    border-radius: 40px;
+    background-color: #FFFFFF;
+    padding: 32px 40px;
+    box-sizing: border-box;
+    top: 80px;
+    left: 40px;
+    min-width: 320px;
+  }
+}
+.contacts__address p {
+  font-size: 16px;
+}
+.contacts__address p:last-child {
+  margin-bottom: 0;
+}
+.contacts__address .lg {
+  font-size: 20px;
+  font-weight: 500;
+  display: block;
+  text-decoration: none;
+}
+.contacts__map {
   position: relative;
-  padding-left: 24px;
-  cursor: pointer;
-  display: block;
 }
-.mc-check label:before {
-  content: url("../images/form-check.svg");
-  position: absolute;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  top: 0;
+.contacts__map .map {
+  position: relative;
+  overflow: hidden;
+}
+.contacts__map iframe {
+  position: relative;
+  border: 0;
+  height: 400px;
+}
+@media only screen and (min-width: 1280px) {
+  .contacts__map iframe {
+    /* > 1366 */
+    height: 580px;
+  }
+}
+
+.illness-list {
+  position: relative;
+}
+.illness-list .alphabet {
+  display: flex;
+  flex-flow: wrap;
+  padding: 0;
+  margin: 0 0 40px;
+}
+.illness-list .alphabet li {
+  text-transform: capitalize;
+  width: 32px;
+  margin-right: 8px;
+  padding: 0;
+}
+.illness-list .alphabet li:before {
+  content: none;
+}
+.illness-list .alphabet li a,
+.illness-list .alphabet li span {
+  font-size: 20px;
+  font-weight: 500;
+}
+.illness-list .alphabet li a {
+  text-decoration: none;
+}
+.illness-list .alphabet li span {
+  color: #FA1476;
+}
+.illness-list__content {
+  display: flex;
+  flex-flow: wrap;
+  margin-bottom: 40px;
+}
+.illness-list__item {
+  margin-bottom: 32px;
+}
+@media only screen and (min-width: 1024px) {
+  .illness-list__item {
+    /* > 1024 */
+    width: 50%;
+    margin-bottom: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+  }
+}
+.illness-list__item p:last-child {
+  margin-bottom: 0;
+}
+.illness-list__button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.warning-info {
+  position: sticky;
+  bottom: 40px;
+  border-radius: 20px;
+  background-color: #FAFAFA;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  box-shadow: 0 0 20px rgba(57, 57, 57, 0.2);
+  margin: 0 auto;
+}
+@media only screen and (min-width: 768px) {
+  .warning-info {
+    /* > 768 */
+    padding: 16px 32px;
+    width: 520px;
+  }
+}
+.warning-info p {
+  margin: 0;
 }
 
 .doctor-sm {

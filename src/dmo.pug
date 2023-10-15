@@ -1,0 +1,52 @@
+extends templates/layout
+include templates/_mixins
+
+block menu
+	- var currentTitle = "dmo.html";
+	+menu(currentTitle)
+
+
+block content
+	.wrapper
+		ul.breadcrumbs
+			li
+				a(href="index.html") Главная
+		.dmo
+			h1 Добровольное медицинское обслуживание
+
+			.dmo__content
+				h3 Программа «Депозит»
+				.dmo__info
+					p Депозит – всегда удобно.
+					p Для корпоративных клиентов мы предлагаем удобную форму обслуживания – депозит.
+					p Это контракт медицинского обслуживания, дающий возможность получать услуги со скидкой. К программе можно подключать неограниченное количество сотрудников и получать услуги в рамках внесенной суммы.
+					p Преимущества обслуживания по депозиту:
+					ul
+						li Скидка на услуги поликлиники до 10% в зависимости от размера депозита.
+						li Количество прикрепленных к депозиту не ограничено.
+						li Возможность пополнения депозита в любой момент.
+						li Предоставление отчетности о списании и остатке.
+					h5 Условия обслуживания:
+					ul
+						li Договор заключается на 1 год с возможностью пролонгации.
+						li Сумма депозита от 50 000 рублей.
+						li Минимальная сумма пополнения 25 тысяч рублей.
+				.dmo__company-list
+					h3 Компании, с которыми мы сотрудничаем
+					.dmo-list
+						.dmo-list__item
+							img(src="images/dmo-1.png" alt="")
+						.dmo-list__item
+							img(src="images/dmo-2.png" alt="")
+						.dmo-list__item
+							img(src="images/dmo-3.png" alt="")
+						.dmo-list__item
+							img(src="images/dmo-4.png" alt="")
+						.dmo-list__item
+							img(src="images/dmo-5.png" alt="")
+						.dmo-list__item
+							img(src="images/dmo-1.png" alt="")
+						.dmo-list__item
+							img(src="images/dmo-2.png" alt="")
+						.dmo-list__item
+							img(src="images/dmo-3.png" alt="")

@@ -1,0 +1,43 @@
+.dmo {
+
+    &__info {
+        @include responsive(landscapedesktop) {
+            width: 60%;
+        }
+    }
+
+    &__company-list {
+        margin-top: 64px;
+    }
+}
+
+.dmo-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 24px;
+
+    @include responsive(portrait) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include responsive(landscape) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 32px;
+    }
+
+    @include responsive(desktop) {
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 40px;
+    }
+
+    &__item {
+
+        img {
+            width: 100%;
+            max-width: 100%;
+            display: block;
+        }
+    }
+}
+
+

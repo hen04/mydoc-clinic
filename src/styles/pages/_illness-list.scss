@@ -1,0 +1,84 @@
+.illness-list {
+    position: relative;
+
+    .alphabet {
+        display: flex;
+        flex-flow: wrap;
+        padding: 0;
+        margin: 0 0 40px;
+
+        li {
+            text-transform: capitalize;
+            width: 32px;
+            margin-right: 8px;
+            padding: 0;
+
+            &:before {
+                content: none;
+            }
+
+            a,
+            span {
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            span {
+                color: $pink-default
+            }
+        }
+
+    }
+
+    &__content {
+        display: flex;
+        flex-flow: wrap;
+        margin-bottom: 40px;
+    }
+
+    &__item {
+        margin-bottom: 32px;
+
+        @include responsive(landscapedesktop) {
+            width: 50%;
+            margin-bottom: 40px;
+            padding-right: 40px;
+            box-sizing: border-box;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+    }
+
+    &__button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.warning-info {
+    position: sticky;
+    bottom: 40px;
+    border-radius: 20px;
+    background-color: $gray-98;
+    padding: 16px 24px;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px rgba(57, 57, 57, 0.2);
+    margin: 0 auto;
+
+    @include responsive(portraitdesktop) {
+        padding: 16px 32px;
+        width: 520px;
+    }
+
+    p {
+        margin: 0;
+    }
+}

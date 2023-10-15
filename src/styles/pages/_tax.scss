@@ -1,0 +1,79 @@
+.tax {
+
+    &__info {
+        @include responsive(landscapedesktop) {
+            width: 50%;
+        }
+    }
+
+    &__info-item {
+        margin-bottom: 64px;
+    }
+
+    &__form {
+
+        @include responsive(landscapedesktop) {
+            width: 80%;
+        }
+    }
+}
+
+.tax-form {
+    display: flex;
+    flex-flow: column;
+
+    &__body {
+        display: flex;
+        flex-flow: wrap;
+        box-sizing: border-box;
+    }
+
+    &__left,
+    &__right {
+        width: 100%;
+        @include responsive(portraitdesktop) {
+            width: calc(50% - 20px);
+        }
+    }
+
+    &__left {
+        @include responsive(portraitdesktop) {
+            margin-right: 20px;
+        }
+    }
+
+    &__right {
+        @include responsive(portraitdesktop) {
+            margin-left: 20px;
+        }
+    }
+
+    .tax-number {
+        margin-bottom: 32px;
+        align-items: center;
+        display: flex;
+
+        @include responsive(mobile) {
+            padding-left: 20px;
+        }
+
+        @include responsive(portraitdesktop) {
+            min-height: 72px;
+        }
+    }
+
+    &__footer {
+        .button {
+            width: 100%;
+            @include responsive(portraitdesktop) {
+                width: 50%;
+            }
+        }
+    }
+    input {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+}
+
