@@ -21,124 +21,14 @@
     }
 }
 
-.main-doctors {
-    margin-bottom: 80px;
-
-    &__slider {
-        .owl-stage {
-            @include responsive(portrait) {
-                height: 100%
-            }
-        }
-        .owl-item {
-            @include responsive(portrait) {
-                height: 100%
-            }
-            div {
-                @include responsive(portrait) {
-                    height: 100%
-                }
-            }
-        }
-
-        .owl-nav {
-            @include responsive(device) {
-                display: none;
-            }
-
-            @include responsive(desktop) {
-                position: absolute;
-                right: 0;
-                top: -64px;
-                width: 144px;
-                display: flex;
-                justify-content: space-around;
-            }
-
-            button {
-                width: 40px;
-                height: 40px;
-
-                span {
-                    display: none;
-                }
-
-                &.disabled {
-                    opacity: 0.3;
-                }
-
-                &.owl-next {
-                    background: url(../../images/arrow-right.svg) 0 0 no-repeat;
-                }
-                &.owl-prev {
-                    background: url(../../images/arrow-left.svg) 0 0 no-repeat;
-                }
-            }
-        }
-    }
-}
-
-.carousel-buttons {
-    border: 1px solid red;
-    display: flex;
-    justify-content: flex-end;
-
-    .carousel-control-prev {
-        position: relative;
-    }
-    .carousel-control-next {
-        position: relative;
-    }
-}
 
 .main-about {
 
-    @include responsive(desktop) {
-        display: flex;
-        align-items: flex-end;
-    }
-
-    &__info {
-        @include responsive(desktop) {
-            padding-top: 64px;
-            padding-right: 40px;
-            width: 50%;
-        }
-    }
     &__text {
-        margin-bottom: 48px;
-    }
-
-    &__sert {
-
-        @include responsive(desktop) {
-            max-width: 460px;
-        }
-
-        .owl-carousel {
-            img {
-                @include responsive(device) {
-                    margin: 0 auto;
-                }
-
-                display: block;
-                border-radius: 40px;
-            }
-        }
-
-        .owl-nav {
-            display: none;
+        @include responsive(portraitdesktop) {
+            columns: 2;
+            gap: 40px;
         }
     }
 
-    &__pic {
-        @include responsive(device) {
-            margin-top: 40px;
-        }
-
-        img {
-            border-radius: 325px 325px 0 0;
-            max-width: 100%;
-        }
-    }
 }

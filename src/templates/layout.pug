@@ -38,11 +38,8 @@ html(lang="ru")
 					.main-header__menu
 						block menu
 
-					.main-header__search
-						img(src="images/search.svg" alt="")
 		main
 			block content
-
 
 		footer
 			.wrapper
@@ -75,15 +72,15 @@ html(lang="ru")
 									a(href="mailto:mail@mydoc.ru") mail@mydoc.ru
 					.main-footer__info
 						p Информация, представленная на сайте, не может быть использована для постановки диагноза, назначения лечения и не заменяет очный приём врача.
-						p Лицензия № ЛО-78-01-009960 выдана Комитетом по здравоохранению г. Санкт-Петербурга 09 июля 2019 года
+						p Лицензия&nbsp;
+							a(href="docs/sert.pdf" target="_blank") № Л041-01148-78/00325856
+							|  выдана Комитетом по здравоохранению г. Санкт-Петербурга 09.07.2019 года
 						p Не является публичной офертой
 					.main-footer__copyright
 						p &copy; 2023. Все права защищены
 					.main-footer__logos
 						.main-footer__logos-item
 							img(src="images/ministry-health-rus.svg" alt="Министерство Здравоохранения РФ")
-						.main-footer__logos-item
-							img(src="images/gosuslugi-logo.svg" alt="Госуслуги")
 
 			.hidden
 				#reviewModal.box-modal
@@ -99,7 +96,8 @@ html(lang="ru")
 			.hidden
 				#appointmentModal.box-modal
 					.box-modal_close.arcticmodal-close
-					h3 Записаться на приём
+					h3 Записаться на приём <br>
+						| Фамилия Имя Отчество врача
 					.review-form
 						form()
 							input(type="text" id="name" name="name" class="mc-input" placeholder="ФИО пациента*" required)
@@ -107,6 +105,10 @@ html(lang="ru")
 							textarea(class="mc-textarea" placeholder="Комментарий")
 							span.warning Нажимая на кнопку Записаться, вы соглашаетесь с условиями оферты
 							button(class="button button--light button--lg") Записаться на приём
+					.form-thankyou.hidden
+						.form-thankyou__content
+							p.success Ваше сообщение отправлено
+
 
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
 		script(src="js/libs/owl.carousel.min.js")

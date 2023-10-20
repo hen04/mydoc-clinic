@@ -12,15 +12,17 @@
     &__photo {
 
         @include responsive(mobile) {
-            margin-bottom: 40px;
+            margin-top: 40px;
         }
 
         @include responsive(portraitdesktop) {
-            width: 45%;
+            width: 450px;
+            padding-left: 40px;
+            box-sizing: border-box;
         }
 
         img {
-            max-width: 100%;
+            width: 100%;
         }
     }
 
@@ -31,12 +33,11 @@
     &__form {
         @include responsive(portraitdesktop) {
             width: 50%;
-            padding-left: 40px;
             box-sizing: border-box;
             max-width: 500px;
         }
 
-            form {
+        form {
             display: flex;
             flex-flow: column;
         }

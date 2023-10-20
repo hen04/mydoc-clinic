@@ -2,7 +2,7 @@ extends templates/layout
 include templates/_mixins
 
 block menu
-	- var currentTitle = "about.html";
+	- var currentTitle = "patient.html";
 	+menu(currentTitle)
 
 
@@ -51,9 +51,6 @@ block content
 							.tax-form__left
 								input(type="text" tabindex="6" id="phone" name="phone" class="mc-input" placeholder="Телефон*" required)
 							.tax-form__right
-
-
-
 								input(type="text" tabindex="7" id="mail" name="mail" class="mc-input" placeholder="E-mail*" required)
 						.tax-form__footer
 							span.mc-check
