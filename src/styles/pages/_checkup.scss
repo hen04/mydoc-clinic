@@ -1,4 +1,17 @@
 .checkup {
+    &__text {
+        margin-bottom: 40px;
+
+        @include responsive(portraitdesktop) {
+            width: 60%;
+            margin-bottom: 80px;
+        }
+    }
+
+    &__text-item {
+        margin-top: 40px;
+    }
+
     &__list {
         display: flex;
         flex-flow: wrap;

@@ -2,7 +2,7 @@ extends templates/layout
 include templates/_mixins
 
 block menu
-	- var currentTitle = "about.html";
+	- var currentTitle = "patient.html";
 	+menu(currentTitle)
 
 
@@ -12,15 +12,14 @@ block content
 			h1 Обращение к главному врачу
 
 			.feedback__content
-				.feedback__photo
-					img(src="images/pyshina.jpg" alt="")
 				.feedback__form
-					.feedback__text
-						p Здесь хорошо бы написать, по каким вопросам можно написать главному врачу.
 					form(action="/feedback.html")
 						input(type="text" class="mc-input" placeholder="ФИО" required)
 						input(type="tel" class="mc-input" placeholder="Телефон" required)
 						input(type="file" class="mc-input" placeholder="Файл")
 						textarea(class="mc-textarea" placeholder="Сообщение" required)
 						button(class="button button--light button--lg") Отправить сообщение
+				.feedback__photo
+					img(src="images/pyshina.jpg" alt="")
+
 

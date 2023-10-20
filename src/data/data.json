@@ -180,8 +180,18 @@
       "submenu": false
     },
     {
-      "url": "about.html",
-      "title": "О клинике",
+      "url": "vacancy.html",
+      "title": "Вакансии",
+      "submenu": false
+    },
+    {
+      "url": "dmo.html",
+      "title": "ДМО",
+      "submenu": false
+    },
+    {
+      "url": "patient.html",
+      "title": "Пациентам",
       "submenu": [
         {
           "url": "feedback.html",
@@ -196,35 +206,10 @@
           "subtitle": "Контакты контролирующих организаций"
         },
         {
-          "url": "vacancy.html",
-          "subtitle": "Вакансии"
+          "url": "illness-list.html",
+          "subtitle": "Справочник болезней"
         }
       ]
-    },
-    {
-      "url": "dmo.html",
-      "title": "ДМО",
-      "submenu": false
-    },
-    {
-      "url": "contacts.html",
-      "title": "Контакты",
-      "submenu": false
-    },
-    {
-      "url": "patient.html",
-      "title": "Пациентам",
-      "submenu": false
-    },
-    {
-      "url": "",
-      "title": "Записаться на приём",
-      "submenu": false
-    },
-    {
-      "url": "",
-      "title": "Вызвать врача на дом",
-      "submenu": false
     }
   ],
 

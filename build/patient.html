@@ -35,20 +35,18 @@
               <li><a href="doctors.html">Врачи</a></li>
               <li><a href="checkup.html">Чекапы</a></li>
               <li><a href="osteopathy.html">Остеопатия</a></li>
-              <li class="has-submenu"><span><a href="about.html">О клинике</a><img src="images/chevron-down.svg" alt=""/></span>
+              <li><a href="vacancy.html">Вакансии</a></li>
+              <li><a href="dmo.html">ДМО</a></li>
+              <li class="has-submenu active"><span><a href="patient.html">Пациентам</a><img src="images/chevron-down.svg" alt=""/></span>
                 <ul class="submenu">
                   <li><a href="feedback.html">Обращение к главному врачу</a></li>
                   <li><a href="tax.html">Оформление справки в налоговые органы</a></li>
                   <li><a href="kontrol.html">Контакты контролирующих организаций</a></li>
-                  <li><a href="vacancy.html">Вакансии</a></li>
+                  <li><a href="illness-list.html">Справочник болезней</a></li>
                 </ul>
               </li>
-              <li><a href="dmo.html">ДМО</a></li>
-              <li><a href="contacts.html">Контакты</a></li>
-              <li class="active"><a href="patient.html">Пациентам</a></li>
             </ul>
           </div>
-          <div class="main-header__search"><img src="images/search.svg" alt=""></div>
         </div>
       </div>
     </header>
@@ -99,12 +97,9 @@
               <li><a href="">Врачи</a></li>
               <li><a href="">Чекапы</a></li>
               <li><a href="">Остеопатия</a></li>
-              <li><a href="">О клинике</a></li>
+              <li><a href="">Вакансии</a></li>
               <li><a href="">ДМО</a></li>
-              <li><a href="">Контакты</a></li>
               <li><a href="">Пациентам</a></li>
-              <li><a href="">Записаться на приём</a></li>
-              <li><a href="">Вызвать врача на дом</a></li>
             </ul>
           </div>
           <div class="main-footer__links">
@@ -131,7 +126,7 @@
           </div>
           <div class="main-footer__info">
             <p>Информация, представленная на сайте, не может быть использована для постановки диагноза, назначения лечения и не заменяет очный приём врача.</p>
-            <p>Лицензия № ЛО-78-01-009960 выдана Комитетом по здравоохранению г. Санкт-Петербурга 09 июля 2019 года</p>
+            <p>Лицензия&nbsp;<a href="docs/sert.pdf" target="_blank">№ Л041-01148-78/00325856</a> выдана Комитетом по здравоохранению г. Санкт-Петербурга 09.07.2019 года</p>
             <p>Не является публичной офертой</p>
           </div>
           <div class="main-footer__copyright">
@@ -139,7 +134,6 @@
           </div>
           <div class="main-footer__logos">
             <div class="main-footer__logos-item"><img src="images/ministry-health-rus.svg" alt="Министерство Здравоохранения РФ"></div>
-            <div class="main-footer__logos-item"><img src="images/gosuslugi-logo.svg" alt="Госуслуги"></div>
           </div>
         </div>
       </div>
@@ -159,7 +153,8 @@
       <div class="hidden">
         <div class="box-modal" id="appointmentModal">
           <div class="box-modal_close arcticmodal-close"></div>
-          <h3>Записаться на приём</h3>
+          <h3>
+            Записаться на приём <br>Фамилия Имя Отчество врача</h3>
           <div class="review-form">
             <form>
               <input class="mc-input" type="text" id="name" name="name" placeholder="ФИО пациента*" required>
@@ -167,6 +162,11 @@
               <textarea class="mc-textarea" placeholder="Комментарий"></textarea><span class="warning">Нажимая на кнопку Записаться, вы соглашаетесь с условиями оферты</span>
               <button class="button button--light button--lg">Записаться на приём</button>
             </form>
+          </div>
+          <div class="form-thankyou hidden">
+            <div class="form-thankyou__content">
+              <p class="success">Ваше сообщение отправлено</p>
+            </div>
           </div>
         </div>
       </div>
