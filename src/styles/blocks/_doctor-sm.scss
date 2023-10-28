@@ -7,8 +7,11 @@
 
     &__image {
         @include responsive(mobile) {
-            min-width: 272px;
-            width: 272px;
+            min-width: 327px;
+            width: 327px;
+            height: 327px;
+            overflow: hidden;
+            border-radius: 40px;
         }
 
         @include responsive(portrait) {
@@ -69,11 +72,11 @@
 
     &__info-descr {
         p {
-            font-size: 15px;
+            @include fontSize(1.5);
             margin-bottom: 4px;
 
             @include responsive(desktop) {
-                font-size: 16px;
+                @include fontSize(1.6);
                 margin-bottom: 8px;
             }
         }

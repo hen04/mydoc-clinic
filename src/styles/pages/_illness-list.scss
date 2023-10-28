@@ -19,7 +19,7 @@
 
             a,
             span {
-                font-size: 20px;
+                @include fontSize(2);
                 font-weight: 500;
             }
 

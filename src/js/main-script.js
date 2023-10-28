@@ -12,6 +12,21 @@ $(function (){
 		$(this).toggleClass('opened');
 	});
 
+	$('.js-blind').on('click', function(){
+		$('html').toggleClass('blind-version-on');
+
+		$(this).toggleClass('on');
+		$('html').removeClass('font-plus');
+	});
+
+	$('.js-font-plus').on('click', function (){
+		$('html').addClass('font-plus');
+	});
+
+	$('.js-font-reset').on('click', function (){
+		$('html').removeClass('font-plus');
+	});
+
 
 
 	$(window).on('load resize', function () {

@@ -26,7 +26,8 @@
           <div class="main-header__menu-btn js-menu-mobile"></div>
           <div class="main-header__phone"><a href="tel:+78122222245">8 (812) 222-22-45</a><span> многоканальный</span></div>
           <div class="main-header__blind">
-            <button class="blind-version"><img src="images/sunglasses.svg" alt=""><span>Версия для слабовидящих</span></button>
+            <div class="blind-panel"><span class="font-plus js-font-plus">A+</span><span class="font-reset js-font-reset">A0</span></div>
+            <button class="blind-version js-blind"><span>Версия для слабовидящих</span></button>
           </div>
           <div class="main-header__button"><a class="button js-modal" href="#appointmentModal">Записаться на приём</a></div>
           <div class="main-header__menu">
@@ -42,6 +43,7 @@
                   <li><a href="feedback.html">Обращение к главному врачу</a></li>
                   <li><a href="tax.html">Оформление справки в налоговые органы</a></li>
                   <li><a href="kontrol.html">Контакты контролирующих организаций</a></li>
+                  <li><a href="contacts.html">Контакты</a></li>
                   <li><a href="illness-list.html">Справочник болезней</a></li>
                 </ul>
               </li>
@@ -66,7 +68,7 @@
           </div>
           <div class="service-item__price-list">
             <h3>Стоимость услуг гинеколога</h3>
-            <ul class="filter">
+            <ul class="filter hidden">
               <li class="filter-item active"><a href="#">Все&nbsp;услуги</a></li>
               <li class="filter-item"><a href="#">Взрослые</a></li>
               <li class="filter-item"><a href="#">Детские</a></li>
@@ -74,65 +76,50 @@
                   <nobr>Диагностика (обследования)</nobr></a></li>
             </ul>
             <div class="price-list">
-              <div class="price-list__header">
-                <div class="price-list__td price-list__td--1"></div>
-                <div class="price-list__td price-list__td--2">в клинике</div>
-                <div class="price-list__td price-list__td--3">на дому</div>
-                <div class="price-list__td price-list__td--4"></div>
-              </div>
               <div class="price-list__content">
                 <div class="price-list__tr">
                   <div class="price-list__td price-list__td--1">Консультация гастроэнтеролога (первичная)</div>
                   <div class="price-list__td price-list__td--2">2 400 ₽</div>
-                  <div class="price-list__td price-list__td--3">3 400 ₽</div>
                   <div class="price-list__td price-list__td--4"><a class="button button--light js-modal" href="#appointmentModal">Записаться</a></div>
                 </div>
                 <div class="price-list__tr">
                   <div class="price-list__td price-list__td--1">Консультация гастроэнтеролога (повторная)</div>
                   <div class="price-list__td price-list__td--2">2 400 ₽</div>
-                  <div class="price-list__td price-list__td--3">3 400 ₽</div>
                   <div class="price-list__td price-list__td--4"><a class="button button--light js-modal" href="#appointmentModal">Записаться</a></div>
                 </div>
                 <div class="price-list__tr">
                   <div class="price-list__td price-list__td--1">Консультация гастроэнтеролога, кандидата медицинских наук</div>
                   <div class="price-list__td price-list__td--2">2 400 ₽</div>
-                  <div class="price-list__td price-list__td--3">3 400 ₽</div>
                   <div class="price-list__td price-list__td--4"><a class="button button--light js-modal" href="#appointmentModal">Записаться</a></div>
                 </div>
                 <div class="price-list__tr">
                   <div class="price-list__td price-list__td--1">Консультация гастроэнтеролога, доктора медицинских наук</div>
                   <div class="price-list__td price-list__td--2">2 400 ₽</div>
-                  <div class="price-list__td price-list__td--3">3 400 ₽</div>
                   <div class="price-list__td price-list__td--4"><a class="button button--light js-modal" href="#appointmentModal">Записаться</a></div>
                 </div>
                 <div class="price-list__tr">
                   <div class="price-list__td price-list__td--1">Консультация профессора</div>
                   <div class="price-list__td price-list__td--2">2 400 ₽</div>
-                  <div class="price-list__td price-list__td--3">3 400 ₽</div>
                   <div class="price-list__td price-list__td--4"><a class="button button--light js-modal" href="#appointmentModal">Записаться</a></div>
                 </div>
                 <div class="price-list__tr">
                   <div class="price-list__td price-list__td--1">Консультация гастроэнтеролога (первичная)</div>
                   <div class="price-list__td price-list__td--2">2 400 ₽</div>
-                  <div class="price-list__td price-list__td--3">3 400 ₽</div>
                   <div class="price-list__td price-list__td--4"><a class="button button--light js-modal" href="#appointmentModal">Записаться</a></div>
                 </div>
                 <div class="price-list__tr">
                   <div class="price-list__td price-list__td--1">Консультация гастроэнтеролога (повторная)</div>
                   <div class="price-list__td price-list__td--2">2 400 ₽</div>
-                  <div class="price-list__td price-list__td--3">3 400 ₽</div>
                   <div class="price-list__td price-list__td--4"><a class="button button--light js-modal" href="#appointmentModal">Записаться</a></div>
                 </div>
                 <div class="price-list__tr">
                   <div class="price-list__td price-list__td--1">Консультация гастроэнтеролога, кандидата медицинских наук</div>
                   <div class="price-list__td price-list__td--2">2 400 ₽</div>
-                  <div class="price-list__td price-list__td--3">3 400 ₽</div>
                   <div class="price-list__td price-list__td--4"><a class="button button--light js-modal" href="#appointmentModal">Записаться</a></div>
                 </div>
                 <div class="price-list__tr">
                   <div class="price-list__td price-list__td--1">Консультация гастроэнтеролога, доктора медицинских наук</div>
                   <div class="price-list__td price-list__td--2">2 400 ₽</div>
-                  <div class="price-list__td price-list__td--3">3 400 ₽</div>
                   <div class="price-list__td price-list__td--4"><a class="button button--light js-modal" href="#appointmentModal">Записаться</a></div>
                 </div>
               </div>
@@ -232,9 +219,6 @@
           </div>
           <div class="main-footer__copyright">
             <p>&copy; 2023. Все права защищены</p>
-          </div>
-          <div class="main-footer__logos">
-            <div class="main-footer__logos-item"><img src="images/ministry-health-rus.svg" alt="Министерство Здравоохранения РФ"></div>
           </div>
         </div>
       </div>

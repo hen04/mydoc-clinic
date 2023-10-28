@@ -206,6 +206,10 @@
           "subtitle": "Контакты контролирующих организаций"
         },
         {
+          "url": "contacts.html",
+          "subtitle": "Контакты"
+        },
+        {
           "url": "illness-list.html",
           "subtitle": "Справочник болезней"
         }

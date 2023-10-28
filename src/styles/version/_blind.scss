@@ -1,0 +1,154 @@
+.blind-version-on {
+    &.font-plus {
+        font-size: 69.4445%;
+
+        .font-reset {
+            opacity: 1;
+        }
+    }
+    .blind-version {
+        text-decoration: underline;
+
+        &.on {
+            background-image: url(../images/sunglasses-off.svg);
+        }
+    }
+
+    img {
+        filter: grayscale(1);
+    }
+
+    .button {
+        background-color: $black;
+
+        &--light {
+            border-color: $black;
+            color: $white;
+        }
+    }
+
+    .main-header__menu a:after {
+        background-color: $black;
+    }
+
+    .filter-item.active {
+        background-color: $black;
+
+        a {
+            color: $white;
+        }
+    }
+
+    .filter-item {
+        border-color: $black;
+        color: $black;
+
+        a {
+            color: $black;
+        }
+    }
+
+    .pagination span {
+        background-color: $black;
+    }
+
+    .pagination a:hover,
+    .pagination span:hover {
+        background-color: $black;
+    }
+
+    .tag--adult,
+    .tag--children {
+        color: $black;
+        border-color: $black;
+    }
+
+    .mc-input:hover,
+    .mc-textarea:hover,
+    .mc-input:active,
+    .mc-textarea:active,
+    .mc-input:focus,
+    .mc-textarea:focus {
+        border-color: $black;
+    }
+
+    .service-item__link a:hover {
+        color: $black;
+    }
+
+    .tabs-header-item {
+        border-color: $black;
+        color: $black;
+
+        &.active {
+            background-color: $black;
+            color: $white;
+        }
+    }
+
+    .tabs-header {
+        border-bottom-color: $black;
+    }
+
+    .tabs-header-item:hover {
+        background-color: $black;
+        color: $white;
+    }
+
+    ul li:before {
+        background-color: $black;
+    }
+
+    .checkup-item__list li:before {
+        border-color: $black;
+    }
+
+    .vacancy__info li:before,
+    .patient__info li:before {
+        background-color: $white;
+        content: url(../images/check-blind.svg);
+    }
+
+    .tax-form__body {
+        flex-flow: column;
+    }
+
+    .tax-form__right {
+        margin: 0;
+    }
+
+    .tax-number,
+    .tax-form__footer .mc-check {
+        margin-left: 20px;
+    }
+
+    .tax-form__left,
+    .tax-form__right,
+    .tax-form__footer .button {
+        width: 65%;
+    }
+
+    .illness-list .alphabet li span {
+        color: $black;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            background-color: $black;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    .blind-panel {
+        display: flex;
+        align-items: center;
+
+        span {
+            cursor: pointer;
+        }
+    }
+}

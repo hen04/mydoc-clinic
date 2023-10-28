@@ -11,7 +11,7 @@
         .price-list__td--2,
         .price-list__td--3 {
             @include responsive(device) {
-                font-size: 15px;
+                @include fontSize(1.5);
                 font-weight: 500;
             }
         }

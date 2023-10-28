@@ -2,7 +2,7 @@
     border-radius: 0 16px;
     border: 1px solid;
     padding: 4px 12px 5px;
-    font-size: 14px;
+    @include fontSize(1.4);
     display: inline-block;
 
     &:not(:first-child) {

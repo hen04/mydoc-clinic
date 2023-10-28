@@ -2,12 +2,15 @@
     &__list {
         display: flex;
         flex-flow: wrap;
+        margin: 0 -20px;
 
         .doctor-sm {
             margin-bottom: 40px;
 
             @include responsive(portraitdesktop) {
                 width: 50%;
+                padding: 0 20px;
+                box-sizing: border-box;
             }
 
             .button {

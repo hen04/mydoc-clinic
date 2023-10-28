@@ -1,17 +1,23 @@
+html {
+  font-size: 62.5%;
+}
 body {
   display: flex;
   flex-flow: column;
   min-height: 100vh;
   background-color: #ffffff;
   color: $gray-default;
-  font: normal 16px/1.35 "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  @include fontSize(1.6);
+  line-height: 1.5;
 
   @include responsive(portrait) {
-    font-size: 17px;
+    @include fontSize(1.7);
   }
 
   @include responsive(desktop) {
-    font-size: 18px;
+    @include fontSize(1.8);
   }
 
   &.menu-opened {
@@ -58,13 +64,13 @@ main {
   grid-template-rows: repeat(3, auto);
   grid-template-areas:
     "menuBtn logo logo logo"
-    "phone phone phone search";
+    "phone phone phone blind";
 
   @include responsive(portrait) {
     grid-template-columns: 56px auto auto 40px;
     grid-template-rows: auto;
     grid-template-areas:
-    "menuBtn logo phone search";
+    "menuBtn logo phone blind";
   }
 
   @include responsive(desktop) {
@@ -114,7 +120,7 @@ main {
 
     @include responsive(mobile) {
       margin-top: 16px;
-      font-size: 22px;
+      @include fontSize(2.2);
       flex-flow: column;
     }
 
@@ -124,7 +130,7 @@ main {
     }
 
     @include responsive(desktop) {
-      font-size: 22px;
+      @include fontSize(2.2);
       align-items: center;
     }
 
@@ -141,7 +147,7 @@ main {
       }
 
       @include responsive(device) {
-        font-size: 14px;
+        @include fontSize(1.4);
       }
 
       @include responsive(portrait) {
@@ -149,7 +155,7 @@ main {
       }
 
       @include responsive(desktop) {
-        font-size: 15px;
+        @include fontSize(1.5);
       }
 
     }
@@ -157,14 +163,21 @@ main {
 
   &__blind {
     grid-area: blind;
+    position: relative;
 
-    @include responsive(device) {
-      display: none;
+    @include responsive(mobile) {
+      width: 100px;
     }
 
     @include responsive(desktop) {
       display: flex;
       margin-left: auto;
+    }
+
+    span {
+      @include responsive(device) {
+        display: none;
+      }
     }
   }
 
@@ -361,7 +374,7 @@ main {
       }
 
       a {
-        font-size: 16px;
+        @include fontSize(1.6);
         opacity: 1;
 
         &:hover {
@@ -376,14 +389,14 @@ main {
 
     a {
       text-decoration: none;
-      font-size: 18px;
+      @include fontSize(1.8);
       position: relative;
       color: $dark-default;
       transition: opacity 0.5s;
       display: block;
 
       @include responsive(desktop) {
-        font-size: 20px;
+        @include fontSize(2);
       }
 
       &:after {
@@ -415,18 +428,47 @@ main {
 
 .blind-version {
   border: 0;
-  background: none;
-  font-size: 16px;
+  background: url(../images/sunglasses.svg) 0 50% no-repeat;
+  background-size: 40px;
+  @include fontSize(1.6);
   color: $gray-default;
   display: flex;
   align-items: center;
   cursor: pointer;
+  padding-left: 40px;
 
-  img {
-    width: 24px;
-    margin: 0 8px 0 0;
+  @include responsive(device) {
+    height: 40px;
+  }
+
+  @include responsive(mobile) {
+    height: 70px;
+  }
+
+  @include responsive(desktop) {
+    background-size: 24px;
+    padding-left: 30px;
   }
 }
+
+.blind-panel {
+  display: none;
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  margin-left: -75px;
+
+  span {
+    min-width: 50px;
+    text-align: center;
+
+    &.font-reset {
+      opacity: 0;
+    }
+  }
+}
+
+
 
 .main-footer {
   display: grid;
@@ -507,7 +549,7 @@ main {
 
     a {
       @include responsive(desktop) {
-        font-size: 16px;
+        @include fontSize(1.6);
       }
     }
   }
@@ -534,7 +576,7 @@ main {
     }
 
     h6 {
-      font-size: 16px;
+      @include fontSize(1.6);
       color: $gray-32;
     }
   }
@@ -549,14 +591,14 @@ main {
   &__address-text,
   &__address-mail {
     p {
-      font-size: 16px;
+      @include fontSize(1.6);
     }
   }
 
   &__address-phone,
   &__address-time {
     p {
-      font-size: 20px;
+      @include fontSize(2);
       font-weight: 500;
 
       @include responsive(desktop) {
@@ -564,7 +606,7 @@ main {
       }
 
       span {
-        font-size: 15px;
+        @include fontSize(1.5);
         display: block;
         font-weight: 400;
       }
@@ -586,7 +628,7 @@ main {
     }
 
     p {
-      font-size: 15px;
+      @include fontSize(1.5);
       color: $gray-32;
     }
   }
@@ -595,17 +637,14 @@ main {
     grid-area: copyright;
     display: flex;
     align-items: flex-end;
-
-    @include responsive(mobile) {
-      margin-top: 16px;
-    }
+    margin-top: 16px;
 
     p {
       margin: 0;
-      font-size: 15px;
+      @include fontSize(1.5);
 
       @include responsive(desktop) {
-        font-size: 16px;
+        @include fontSize(1.6);
       }
     }
   }
@@ -643,31 +682,31 @@ h6 {
 }
 
 h1 {
-  font-size: 32px;
+  @include fontSize(3.2);
   margin-bottom: 24px;
   line-height: 1.2;
 
   @include responsive(portrait) {
-    font-size: 40px;
+    @include fontSize(4);
     margin-bottom: 32px;
   }
 
   @include responsive(landscapedesktop) {
-    font-size: 48px;
+    @include fontSize(4.8);
     margin-bottom: 40px;
   }
 }
 
 h2 {
-  font-size: 40px;
+  @include fontSize(4);
   margin-bottom: 24px;
 
   @include responsive(portrait) {
-    font-size: 32px;
+    @include fontSize(3.2);
   }
 
   @include responsive(landscapedesktop) {
-    font-size: 40px;
+    @include fontSize(4);
     margin-bottom: 40px;
   }
 
@@ -681,55 +720,55 @@ h2 {
 }
 
 h3 {
-  font-size: 20px;
+  @include fontSize(2);
   margin-bottom: 24px;
 
   @include responsive(portrait) {
-    font-size: 24px;
+    @include fontSize(2.4);
   }
 
   @include responsive(landscapedesktop) {
-    font-size: 32px;
+    @include fontSize(3.2);
     margin-bottom: 32px;
   }
 }
 
 h4 {
-  font-size: 18px;
+  @include fontSize(1.8);
   margin-bottom: 20px;
 
   @include responsive(portrait) {
-    font-size: 20px;
+    @include fontSize(2);
   }
 
   @include responsive(landscapedesktop) {
-    font-size: 24px;
+    @include fontSize(2.4);
   }
 }
 h5 {
   @include responsive(device) {
-    font-size: 17px;
+    @include fontSize(1.7);
     margin-bottom: 16px;
   }
   @include responsive(portrait) {
-    font-size: 18px;
+    @include fontSize(1.8);
     margin-bottom: 16px;
   }
   @include responsive(landscapedesktop) {
-    font-size: 20px;
+    @include fontSize(2);
     margin-bottom: 16px;
   }
 }
 h6 {
-  font-size: 16px;
+  @include fontSize(1.6);
   margin-bottom: 16px;
 
   @include responsive(portrait) {
-    font-size: 17px;
+    @include fontSize(1.7);
   }
 
   @include responsive(landscapedesktop) {
-    font-size: 18px;
+    @include fontSize(1.8);
   }
 }
 
@@ -762,7 +801,7 @@ ul {
       border-radius: 50%;
       background-color: $pink-default;
       left: 0;
-      top: 4px;
+      top: 6px;
     }
   }
 }
@@ -772,7 +811,7 @@ p {
 }
 
 .text-xl {
-  font-size: 20px;
+  @include fontSize(2);
 }
 
 .owl-carousel {
@@ -851,6 +890,14 @@ p {
 
   @include responsive(desktop) {
     right: 40px;
+  }
+}
+
+.modal-info {
+  padding-right: 32px;
+
+  p:last-child {
+    margin-bottom: 0;
   }
 }
 
