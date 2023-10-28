@@ -29,7 +29,7 @@
         }
 
         p {
-            font-size: 16px;
+            @include fontSize(1.6);
 
             &:last-child {
                 margin-bottom: 0;
@@ -38,7 +38,7 @@
         }
 
         .lg {
-            font-size: 20px;
+            @include fontSize(2);
             font-weight: 500;
             display: block;
             text-decoration: none;

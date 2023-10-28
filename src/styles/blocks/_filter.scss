@@ -24,7 +24,7 @@
     }
 
     @include responsive(device) {
-        font-size: 16px;
+        @include fontSize(1.5);
     }
 
     &:hover {

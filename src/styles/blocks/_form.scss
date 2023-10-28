@@ -1,7 +1,7 @@
 .mc-input,
 .mc-textarea {
     border-radius: 40px;
-    font-size: 20px;
+    @include fontSize(2);
     padding: 16px 20px;
     line-height: 1.4;
     border: 2px solid $gray-default;
@@ -36,6 +36,6 @@
     display: block;
     margin-bottom: 24px;
     padding-left: 22px;
-    font-size: 16px;
+    @include fontSize(1.6);
     color: $gray-breadcrumbs;
 }

@@ -3,7 +3,7 @@
     border-radius: 40px;
     color: $white;
     border: 0;
-    font-size: 16px;
+    @include fontSize(1.6);
     line-height: 1.2225;
     padding: 12px 32px;
     cursor: pointer;
@@ -12,7 +12,7 @@
     display: inline-block;
 
     @include responsive(desktop) {
-        font-size: 18px;
+        @include fontSize(1.8);
     }
 
     &--light {
@@ -28,13 +28,13 @@
     }
 
     &--lg {
-        font-size: 20px;
+        @include fontSize(2);
         line-height: 1.4;
         font-weight: 500;
         padding: 20px 32px;
 
         @include responsive(mobile) {
-            font-size: 18px;
+            @include fontSize(1.8);
             padding: 16px 24px;
         }
     }

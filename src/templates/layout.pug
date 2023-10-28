@@ -30,8 +30,10 @@ html(lang="ru")
 						a(href="tel:+78122222245") 8 (812) 222-22-45
 						span  многоканальный
 					.main-header__blind
-						button(class="blind-version")
-							img(src="images/sunglasses.svg" alt="")
+						.blind-panel
+							span.font-plus.js-font-plus A+
+							span.font-reset.js-font-reset A0
+						button(class="blind-version js-blind")
 							span Версия для слабовидящих
 					.main-header__button
 						a(href="#appointmentModal" class="button js-modal") Записаться на приём
@@ -78,9 +80,6 @@ html(lang="ru")
 						p Не является публичной офертой
 					.main-footer__copyright
 						p &copy; 2023. Все права защищены
-					.main-footer__logos
-						.main-footer__logos-item
-							img(src="images/ministry-health-rus.svg" alt="Министерство Здравоохранения РФ")
 
 			.hidden
 				#reviewModal.box-modal

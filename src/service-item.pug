@@ -27,17 +27,11 @@ block content
 				h3 Стоимость услуг гинеколога
 				include templates/_filter
 				.price-list
-					.price-list__header
-						.price-list__td.price-list__td--1
-						.price-list__td.price-list__td--2 в клинике
-						.price-list__td.price-list__td--3 на дому
-						.price-list__td.price-list__td--4
 					.price-list__content
 						each item in priceList
 							.price-list__tr
 								.price-list__td.price-list__td--1= item.title
 								.price-list__td.price-list__td--2= item.clinic + ' ₽'
-								.price-list__td.price-list__td--3= item.home + ' ₽'
 								.price-list__td.price-list__td--4
 									a(href="#appointmentModal" class="button button--light js-modal") Записаться
 

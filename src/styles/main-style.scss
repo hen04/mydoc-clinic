@@ -1,6 +1,7 @@
-@import "mixins/_responsive";
-@import "normalize";
 @import "variables";
+@import "mixins/_responsive";
+@import "mixins/_font";
+@import "normalize";
 @import "template";
 @import "pages/index";
 @import "pages/doctors";
@@ -30,3 +31,4 @@
 @import "blocks/price-list";
 @import "blocks/checkup-sm";
 @import "blocks/checkup-item-sm";
+@import "version/blind";
