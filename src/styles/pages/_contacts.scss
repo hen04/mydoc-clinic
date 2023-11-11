@@ -13,38 +13,6 @@
         }
     }
 
-    &__address {
-        margin-bottom: 40px;
-
-        @include responsive(desktop) {
-            position: absolute;
-            z-index: 999;
-            border-radius: 40px;
-            background-color: $white;
-            padding: 32px 40px;
-            box-sizing: border-box;
-            top: 80px;
-            left: 40px;
-            min-width: 320px;
-        }
-
-        p {
-            @include fontSize(1.6);
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-
-        }
-
-        .lg {
-            @include fontSize(2);
-            font-weight: 500;
-            display: block;
-            text-decoration: none;
-        }
-    }
-
     &__map {
         position: relative;
 
