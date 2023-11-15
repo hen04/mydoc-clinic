@@ -1628,20 +1628,23 @@ p {
   .service-item__text {
     /* > 768 */
     padding-right: 40px;
-    width: 55%;
+    width: 60%;
   }
 }
-.service-item__slider {
+.service-item__aside {
   width: 100%;
 }
 @media only screen and (min-width: 768px) {
-  .service-item__slider {
+  .service-item__aside {
     /* > 768 */
-    width: 45%;
+    width: 40%;
   }
 }
-.service-item__slider img {
-  border-radius: 24px;
+.service-item__aside img {
+  border-radius: 20px;
+}
+.service-item__slider {
+  margin-bottom: 40px;
 }
 .service-item__link {
   background-color: #F5F5F5;
@@ -1653,15 +1656,13 @@ p {
 @media only screen and (min-width: 768px) and (max-width: 1279px) {
   .service-item__link {
     /* 768-1279 */
-    width: 35%;
     padding: 16px;
   }
 }
 @media only screen and (min-width: 1280px) {
   .service-item__link {
     /* > 1366 */
-    width: 35%;
-    padding: 32px 32px 24px;
+    padding: 24px;
   }
 }
 .service-item__link a {
@@ -1675,6 +1676,7 @@ p {
 .service-item__link img {
   max-width: 100%;
   display: block;
+  width: 100%;
 }
 .service-item__link span {
   font-weight: 500;
