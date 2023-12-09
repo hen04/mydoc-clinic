@@ -500,7 +500,8 @@ body {
 @media only screen and (max-width: 767px) {
   .main-header__blind {
     /* < 767 */
-    width: 100px;
+    width: 50px;
+    margin-left: auto;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -508,12 +509,6 @@ body {
     /* > 1366 */
     display: flex;
     margin-left: auto;
-  }
-}
-@media only screen and (max-width: 1279px) {
-  .main-header__blind span {
-    /* < 1279 */
-    display: none;
   }
 }
 .main-header__button {
@@ -788,6 +783,12 @@ body {
     padding-left: 30px;
   }
 }
+@media only screen and (max-width: 1279px) {
+  .blind-version span {
+    /* < 1279 */
+    display: none;
+  }
+}
 
 .blind-panel {
   display: none;
@@ -802,6 +803,19 @@ body {
   flex-flow: column;
   border-radius: 12px;
   border: 1px solid #525252;
+}
+@media only screen and (max-width: 1279px) {
+  .blind-panel {
+    /* < 1279 */
+    width: 230px;
+    margin-left: -180px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .blind-panel {
+    /* < 767 */
+    top: 58px;
+  }
 }
 .blind-panel.active {
   display: flex;
