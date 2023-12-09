@@ -12,21 +12,61 @@ $(function (){
 		$(this).toggleClass('opened');
 	});
 
-	$('.js-blind').on('click', function(){
-		$('html').toggleClass('blind-version-on');
-
-		$(this).toggleClass('on');
-		$('html').removeClass('font-plus');
+	$('.js-blind').on('click', function() {
+		let $target = $(this).prev();
+		blindPanel($target);
 	});
+
+	function blindPanel($target) {
+		if ( $target.hasClass('active') ) {
+			$target.removeClass('active');
+		} else {
+			$target.addClass('active');
+		}
+	}
 
 	$('.js-font-plus').on('click', function (){
 		$('html').addClass('font-plus');
+		$('.font-default').removeClass('hidden');
+		blindVersion(this);
+
+		let $target = $(this).parent();
+		blindPanel($target);
+
 	});
 
 	$('.js-font-reset').on('click', function (){
 		$('html').removeClass('font-plus');
+		$('.font-extra').removeClass('hidden');
+		blindVersion(this);	
+
+		let $target = $(this).parent();
+		blindPanel($target);
 	});
 
+	$('.js-color-off').on('click', function (){
+		$('html').addClass('color-off');
+		$('.color-version').removeClass('hidden');
+		blindVersion(this);	
+
+		let $target = $(this).parent();
+		blindPanel($target);
+	});
+
+	$('.js-color-on').on('click', function (){
+		$('html').removeClass('color-off');
+		$('.black-version').removeClass('hidden');
+		blindVersion(this);	
+
+		let $target = $(this).parent();
+		blindPanel($target);
+	});
+
+	function blindVersion($class) {
+		$($class).addClass('hidden');
+		$(this).parent().removeClass('active');
+	}
+	
 
 
 	$(window).on('load resize', function () {

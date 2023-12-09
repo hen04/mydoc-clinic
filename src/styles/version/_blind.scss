@@ -1,19 +1,13 @@
-.blind-version-on {
-    &.font-plus {
-        font-size: 69.4445%;
+.font-plus {
+    //font-size: 69.4445%;
+    font-size: 74%;
 
-        .font-reset {
-            opacity: 1;
-        }
+    .font-reset {
+        opacity: 1;
     }
-    .blind-version {
-        text-decoration: underline;
+}
 
-        &.on {
-            background-image: url(../images/sunglasses-off.svg);
-        }
-    }
-
+.color-off {
     img {
         filter: grayscale(1);
     }
@@ -140,15 +134,6 @@
             background-color: $black;
             left: 0;
             right: 0;
-        }
-    }
-
-    .blind-panel {
-        display: flex;
-        align-items: center;
-
-        span {
-            cursor: pointer;
         }
     }
 }
