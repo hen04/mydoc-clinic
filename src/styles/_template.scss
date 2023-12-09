@@ -166,18 +166,13 @@ main {
     position: relative;
 
     @include responsive(mobile) {
-      width: 100px;
+      width: 50px;
+      margin-left: auto;
     }
 
     @include responsive(desktop) {
       display: flex;
       margin-left: auto;
-    }
-
-    span {
-      @include responsive(device) {
-        display: none;
-      }
     }
   }
 
@@ -449,6 +444,13 @@ main {
     background-size: 24px;
     padding-left: 30px;
   }
+
+  span {
+    @include responsive(device) {
+      display: none;
+    }
+  }
+
 }
 
 .blind-panel {
@@ -464,6 +466,15 @@ main {
   flex-flow: column;
   border-radius: 12px;
   border: 1px solid $gray-32;
+
+  @include responsive(device) {
+    width: 230px;
+    margin-left: -180px;
+  }
+
+  @include responsive(mobile) {
+    top: 58px;
+  }
 
   &.active {
     display: flex;
