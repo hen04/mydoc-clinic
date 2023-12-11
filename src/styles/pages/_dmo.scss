@@ -13,6 +13,11 @@
     &__item:not(:last-child) {
         margin-bottom: 40px;
     }
+    
+    &__date {
+        font-size: 14px;
+        color: $gray-32;
+    }
 }
 
 .dmo-list {
