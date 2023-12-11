@@ -214,6 +214,11 @@
           "subtitle": "Справочник болезней"
         }
       ]
+    },
+    {
+      "url": "news.html",
+      "title": "Новости",
+      "submenu": false
     }
   ],
 
