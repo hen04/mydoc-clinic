@@ -2297,6 +2297,9 @@ p {
 .dmo__company-list {
   margin-top: 64px;
 }
+.dmo__item:not(:last-child) {
+  margin-bottom: 40px;
+}
 
 .dmo-list {
   display: grid;
