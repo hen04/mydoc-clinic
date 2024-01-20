@@ -25,7 +25,7 @@ $desktop: 1280px;
     }
   }
   @else if $media == mobilelandscape {
-    @media only screen and (max-width: $landscape) { /* < 1023 */
+    @media only screen and (max-width: $landscape - 1) { /* < 1023 */
       @content;
     }
   }
@@ -40,7 +40,7 @@ $desktop: 1280px;
     }
   }
   @else if $media == desktop {
-    @media only screen and (min-width: $desktop) { /* > 1366 */
+    @media only screen and (min-width: $desktop) { /* > 1280 */
       @content;
     }
   }

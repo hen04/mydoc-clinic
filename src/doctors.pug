@@ -16,6 +16,11 @@ block content
 		.doctors
 			h1 Врачи
 
+			.doctors__filter 
+				select#service(name="service")
+					each item in servicesList
+						option(value=item.item)= item.item
+
 			.doctors__list
 				+doctorSm("doctor-1.jpg", "Иванова Александра Владимировна", "Гастроэнтеролог, врач высшей категории.", "Медицинский стаж 14 лет.", "Взрослый", "Детский")
 				+doctorSm("doctor-2.jpg", "Степанов Олег Михайлович", "Кардиолог, врач высшей категории.", "Медицинский стаж 24 года.", "Взрослый", "")
