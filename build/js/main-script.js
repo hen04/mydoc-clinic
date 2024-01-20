@@ -66,8 +66,6 @@ $(function (){
 		$($class).addClass('hidden');
 		$(this).parent().removeClass('active');
 	}
-	
-
 
 	$(window).on('load resize', function () {
 		if ($(this).width() <= 1365) {
@@ -118,6 +116,27 @@ $(function (){
 		}
 	});
 
+	$(".js-doctor-carousel").owlCarousel({
+		responsiveClass: true,
+		nav: true,
+		dots: false,
+		autoHeight: false,
+		responsive: {
+			0: {
+				items: 1,
+				slideBy: 1,
+				margin: 20,
+				autoHeight: true,
+			},
+			768: {
+				items: 2,
+				slideBy: 2,
+				margin: 20,
+				autoHeight: true,
+			}
+		}
+	});
+
 	const headers = document.querySelectorAll('.tabs-header-item');
 	const tabs = document.querySelectorAll('.tabs-content-item');
 
@@ -149,5 +168,9 @@ $(function (){
 		var linkhref = $(this).attr('href');
 		$(linkhref).arcticmodal();
 	});
+
+	
+	$('.js-gallery a').simpleLightbox();
+
 
 });

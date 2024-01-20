@@ -1,3 +1,78 @@
+.main-banner {
+    background-color: rgba(#FA1476, 0.05);
+    padding: 32px 0;
+
+    @include responsive(desktop) {
+        padding: 80px 0 64px;
+    }
+
+    @include responsive(desktop) {
+        margin-top: -40px;
+    }
+
+    &__content {
+        max-width: 1185px;
+        margin: 0 auto;
+
+        @include responsive(mobilelandscape) {
+            padding: 0 24px;
+        }
+
+        .owl-dots {
+            margin-top: 32px;
+        }
+    }
+
+    &__link {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        @include responsive(mobile) {
+            flex-flow: column-reverse;
+        }
+
+        .button--light {
+            background-color: transparent;
+        }
+    }
+
+    &__text {
+        box-sizing: border-box;
+
+        @include responsive(portraitdesktop) {
+            padding-right: 100px;
+            width: 55%;
+        }
+
+        @include responsive(portrait) {
+            padding-right: 40px;
+        }
+
+        h2 {
+            line-height: 1;
+        }
+    }
+
+    &__img {
+        @include responsive(mobile) {
+            margin-bottom: 32px;
+        }
+
+        @include responsive(portraitdesktop) {
+            width: 45%;
+        }
+
+        img {
+            border-radius: 20px;
+        }
+    }
+}
+
 .main-services {
     margin-bottom: 80px;
 
@@ -23,6 +98,100 @@
 
 
 .main-about {
+    padding-top: 40px;
+
+    @include responsive(desktop) {
+        padding-top: 80px;
+    }
+
+    &__img {
+        display: grid;
+        box-sizing: border-box;
+        gap: 20px;
+        grid-template-columns: calc(70% - 20px) 30%;
+        grid-template-rows: repeat(3, 30%);
+        box-sizing: border-box;
+        gap: 20px;
+        overflow: hidden;
+
+        @include responsive(mobile) {
+            grid-template-columns: calc(50% - 10px) 50%;
+            grid-template-rows: repeat(2, calc(50% - 5px));
+            gap: 10px;
+            height: 215px;
+        }
+
+        @include responsive(portrait) {
+            gap: 15px 20px;
+            height: 300px;
+        }
+
+        @include responsive(landscape) {
+            height: 440px;
+        }
+
+        @include responsive(desktop) {
+            height: 560px;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+    }
+
+    &__img-item {
+        overflow: hidden;
+        position: relative;
+        border-radius: 10px;
+
+        @include responsive(portraitdesktop) {
+            border-radius: 20px;
+        }
+        
+        &:first-child {
+            @include responsive(portraitdesktop) {
+                grid-row-end: 4;
+                grid-row-start: 1;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            display: block;
+        }
+
+        span {
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(#000, 0.4);
+        }
+
+    }
+
+    &__link {
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            background-color: rgba(#000, 0.5);
+            z-index: 1;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+    }
 
     &__text {
         @include responsive(portraitdesktop) {
@@ -31,12 +200,172 @@
         }
     }
 
+    &__info {
+        margin-top: 40px;
+
+        @include responsive(mobile) {
+            max-width: 500px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+
+}
+
+.about-clinic {
+    display: flex;
+
+    @include responsive(mobile) {
+        flex-flow: column;
+    }
+
+    &__text {
+
+        @include responsive(portrait) {
+            width: 55%;
+        }
+
+        @include responsive(desktop) {
+            width: 50%;
+        }
+    }
+
+    &__banners {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+
+        @include responsive(mobile) {
+            margin-top: 40px;
+        }
+
+        @include responsive(portrait) {
+            width: 45%;
+        }
+
+        @include responsive(desktop) {
+            width: 50%;
+            align-items: flex-end;
+        }
+    }
+}
+
+.banner-sm {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    padding: 0 24px;
+    text-decoration: none;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+
+    &__text {
+        color: $white;
+        font-size: 18px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+
+        @include responsive(landscapedesktop) {
+            width: 65%;
+        }
+
+        @include responsive(desktop) {
+            font-size: 20px;
+        }
+
+        p {
+            line-height: 1.2;
+            margin-bottom: 0;
+        }
+    }
+
+    &__img {
+        padding-top: 20px;
+
+        @include responsive(landscapedesktop) {
+            width: 30%;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+    }
+
+    &--inbody {
+        background-color: #4DD2C2;
+        margin-bottom: 24px;
+
+        @include responsive(mobilelandscape) {
+            flex-flow: column-reverse;
+            padding-top: 20px;
+        }
+
+        @include responsive(desktop) {
+            margin-bottom: 32px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 170px;
+            margin: 0 auto;
+        }
+    }
+
+    &--dmo {
+        background-color: #4D9AD2;
+    }
 }
 
 .main-doctors {
-    margin-bottom: 80px;
-
-    &__item {
-        margin-bottom: 40px;
+    @include responsive(mobile) {
+        margin: 40px 0;
     }
+
+    margin: 40px 0 0;
+
+    @include responsive(desktop) {
+        margin-top: 80px;
+    }
+
+
+    .owl-nav {
+        position: absolute;
+        right: 0;
+        display: flex;
+        width: 100px;
+        justify-content: space-between;
+        top: -60px;
+
+        @include responsive(desktop) {
+            top: -80px;
+        }
+
+
+        button {
+            width: 40px;
+            height: 40px;
+            background-size: 40px;
+
+            span {
+                opacity: 0;
+            }
+
+            &.disabled {
+                opacity: 0.5;
+            }
+        }
+
+        .owl-prev {
+            background: url(../images/arrow-left.svg) 40px !important;
+        }
+
+        .owl-next {
+            background: url(../images/arrow-right.svg) !important;
+        }
+    }
+
+
 }
