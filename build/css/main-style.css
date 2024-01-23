@@ -687,6 +687,7 @@ body {
     padding: 12px;
     margin-left: -12px;
     position: absolute;
+    z-index: 99;
   }
 }
 .main-header__menu .submenu li {
@@ -799,7 +800,7 @@ body {
   box-sizing: border-box;
   align-items: flex-start;
   background-color: #fff;
-  z-index: 1;
+  z-index: 99;
   flex-flow: column;
   border-radius: 12px;
   border: 1px solid #525252;
