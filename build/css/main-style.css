@@ -800,7 +800,7 @@ body {
   box-sizing: border-box;
   align-items: flex-start;
   background-color: #fff;
-  z-index: 99;
+  z-index: 1;
   flex-flow: column;
   border-radius: 12px;
   border: 1px solid #525252;
@@ -1351,6 +1351,7 @@ p {
 .main-banner__link {
   display: flex;
   justify-content: flex-end;
+  margin-top: 24px;
 }
 .main-banner__item {
   display: flex;
@@ -1659,6 +1660,9 @@ p {
   width: 100%;
   max-width: 170px;
   margin: 0 auto;
+}
+.banner-sm--inbody p {
+  font-size: 16px;
 }
 .banner-sm--dmo {
   background-color: #4D9AD2;

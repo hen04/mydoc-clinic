@@ -26,6 +26,7 @@
     &__link {
         display: flex;
         justify-content: flex-end;
+        margin-top: 24px;
     }
 
     &__item {
@@ -312,6 +313,10 @@
             max-width: 170px;
             margin: 0 auto;
         }
+
+        p {
+            font-size: 16px;
+        }
     }
 
     &--dmo {
@@ -320,16 +325,15 @@
 }
 
 .main-doctors {
+    margin: 40px 0 0;
+
     @include responsive(mobile) {
         margin: 40px 0;
     }
 
-    margin: 40px 0 0;
-
     @include responsive(desktop) {
         margin-top: 80px;
     }
-
 
     .owl-nav {
         position: absolute;
