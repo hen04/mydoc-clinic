@@ -2699,6 +2699,132 @@ p {
   display: block;
 }
 
+.inbody__heading {
+  max-width: 800px;
+}
+@media only screen and (min-width: 768px) {
+  .inbody__top-content {
+    /* > 768 */
+    display: flex;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .inbody__image {
+    /* < 767 */
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .inbody__image {
+    /* > 768 */
+    width: 50%;
+    padding-top: 80px;
+  }
+}
+.inbody__image img {
+  max-width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .inbody__text {
+    /* > 768 */
+    width: 50%;
+  }
+}
+.inbody__text h4 {
+  margin-top: 32px;
+}
+@media only screen and (max-width: 767px) {
+  .inbody__image-quote {
+    /* < 767 */
+    display: flex;
+    flex-flow: column-reverse;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .inbody__image-quote {
+    /* > 768 */
+    display: flex;
+    margin: 80px 0 100px 0;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .inbody__quote {
+    /* > 768 */
+    width: 50%;
+  }
+}
+.inbody__quote p {
+  font-weight: 300;
+  line-height: 1.2;
+}
+@media only screen and (max-width: 767px) {
+  .inbody__quote p {
+    /* < 767 */
+    font-size: 24px;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .inbody__quote p {
+    /* > 768 */
+    font-size: 32px;
+  }
+}
+.inbody__content {
+  display: flex;
+  flex-flow: wrap;
+}
+@media only screen and (max-width: 767px) {
+  .inbody__content-item-left {
+    /* < 767 */
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .inbody__content-item-left {
+    /* > 768 */
+    padding-right: 50%;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .inbody__content-item-right {
+    /* < 767 */
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .inbody__content-item-right {
+    /* > 768 */
+    padding-left: 50%;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .inbody__footer-content {
+    /* > 768 */
+    margin: 0 25%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .inbody__footer-image {
+    /* < 767 */
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .inbody__footer-image {
+    /* > 768 */
+    margin-bottom: 40px;
+  }
+}
+.inbody__footer-image img {
+  max-width: 100%;
+}
+
 .contacts {
   margin-bottom: 64px;
 }
