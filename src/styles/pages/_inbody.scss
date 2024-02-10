@@ -1,0 +1,119 @@
+.inbody {
+    &__heading {
+        max-width: 800px;
+    }
+
+    &__top-content {
+
+        @include responsive(portraitdesktop) {
+            display: flex;
+        }
+    }
+
+    &__image {
+        @include responsive (mobile) {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        @include responsive (portraitdesktop) {
+            width: 50%;
+            padding-top: 80px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__text {
+        @include responsive (portraitdesktop) {
+            width: 50%;
+        }
+
+        h4 {
+            margin-top: 32px;
+        }
+    }
+
+    &__image-quote {
+        @include responsive(mobile) {
+            display: flex;
+            flex-flow: column-reverse;
+            margin-bottom: 40px;
+        }
+
+        @include responsive (portraitdesktop) {
+            display: flex;
+            margin: 80px 0 100px 0;
+            align-items: center;
+        }
+    }
+
+    &__quote {
+        @include responsive (portraitdesktop) {
+            width: 50%;
+        }
+
+        p {
+            font-weight: 300;
+            line-height: 1.2;
+
+            @include responsive (mobile) {
+                font-size: 24px;
+                text-align: center;
+            }
+
+            @include responsive (portraitdesktop) {
+                font-size: 32px;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-flow: wrap;
+    }
+
+    &__content-item-left {
+        @include responsive (mobile) {
+            margin-bottom: 24px;
+        }
+
+        @include responsive (portraitdesktop) {
+            padding-right: 50%;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__content-item-right {
+        @include responsive (mobile) {
+            margin-bottom: 24px;
+        }
+
+        @include responsive (portraitdesktop) {
+            padding-left: 50%;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__footer-content {
+        @include responsive (portraitdesktop) {
+            margin: 0 25%;
+        }
+    }
+
+    &__footer-image {
+        @include responsive (mobile) {
+            margin-bottom: 24px;
+        }
+
+        @include responsive (portraitdesktop) {
+            margin-bottom: 40px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+}
