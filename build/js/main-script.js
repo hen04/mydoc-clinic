@@ -120,7 +120,7 @@ $(function (){
 		responsiveClass: true,
 		nav: true,
 		dots: false,
-		autoHeight: true,
+		autoHeight: false,
 		responsive: {
 			0: {
 				items: 1,
