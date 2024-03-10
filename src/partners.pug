@@ -1,0 +1,27 @@
+extends templates/layout
+include templates/_mixins
+
+block menu
+	+menu(currentTitle)
+
+
+block content
+	.wrapper
+		ul.breadcrumbs
+			li
+				a(href="index.html") Главная
+		.partners
+			h1 Страховые партнеры
+
+			.partners__text 
+				p Клиника «MyDoc» сотрудничает со страховыми компаниями и является клиникой, входящей в программы добровольного медицинского страхования (ДМС).
+				p Проверьте свою программу ДМС, чтобы узнать, включена ли в неё наша клиника»
+
+			.partners__content
+				each item in partners
+					.partners__item
+						.partners__img
+							a(href="#")
+								img(src="images/" + item.img alt= item.title)
+						p
+							a(href="#")= item.title
