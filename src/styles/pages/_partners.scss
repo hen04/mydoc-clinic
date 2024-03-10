@@ -1,0 +1,49 @@
+.partners {
+    margin-bottom: 64px;
+
+    &__text {
+        max-width: 640px;;
+        margin-bottom: 40px;
+    }
+
+    &__content {
+        display: grid;
+        gap: 40px;
+
+        @include responsive(mobile) {
+            max-width: 300px;
+        }
+
+        @include responsive(portrait) {
+            grid-template-columns: repeat(2, calc(50% - 40px));
+        }
+
+        @include responsive(landscapedesktop) {
+            grid-template-columns: repeat(4, calc(25% - 40px));
+        }
+    }
+
+    &__item {
+        p {
+            margin: 0;
+
+            @include responsive(desktop) {
+                text-align: center;
+            }
+        }
+    }
+
+    &__img {
+        display: flex;
+        align-items: center;
+        height: 140px;
+
+        @include responsive(portraitdesktop) {
+            height: 240px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+}
